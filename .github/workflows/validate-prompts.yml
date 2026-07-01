@@ -1,4 +1,4 @@
-name: Validate prompts
+name: Validate Prompts
 
 on:
   push:
@@ -14,15 +14,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-      - name: Validate prompt structure
+      - name: Validate prompt library
         run: node scripts/validate-prompts.js
-
-      - name: Check CHANGELOG mentions VERSION
-        run: |
-          VERSION=$(cat prompts/VERSION | tr -d '\n')
-          if ! grep -q "\[$VERSION\]" CHANGELOG.md; then
-            echo "CHANGELOG.md missing section for prompts/VERSION ($VERSION)"
-            exit 1
-          fi

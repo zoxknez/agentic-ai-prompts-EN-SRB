@@ -1,5 +1,7 @@
 # 🧠 Universal AI Engineering Prompts
 
+![Validate Prompts](https://github.com/zoxknez/agentic-ai-prompts-EN-SRB/actions/workflows/validate-prompts.yml/badge.svg)
+
 🇷🇸 [Srpski prevod ovde / Serbian translation here](./README.sr.md)
 
 **Structured, production-grade prompts for working with AI coding agents.**
@@ -241,18 +243,20 @@ Add one line to your context block, e.g. `Stack type: CLI tool (Rust)` so the ag
 
 ```
 univerzalniprompt/
-├── AGENTS.md                              ← Cross-tool instructions (copy to your projects)
-├── README.md
-├── README.sr.md
+├── .github/
+│   └── workflows/
+│       └── validate-prompts.yml           ← CI validation on push/PR
+├── AGENTS.md                              ← Cross-tool instructions
+├── README.md / README.sr.md
 ├── examples/
-│   ├── README.md                          ← Index of sample reports
+│   ├── README.md                          ← Sample report index
 │   ├── sample-architecture-report.md
 │   ├── sample-audit-report.md
-│   └── ...
+│   └── ...                                ← samples for prompts 02–07
 ├── scripts/
-│   └── validate-prompts.js                ← CI + local structure checks
-├── prompts/
-│   ├── VERSION                            ← Semver (aligned with CHANGELOG)
+│   └── validate-prompts.js                ← Local + CI structure checks
+├── integrations/                        ← Per-agent config templates
+│   ├── README.md / README.sr.md
 │   ├── templates/                         ← AGENTS.md, CLAUDE.md, GEMINI.md
 │   ├── cursor/
 │   ├── windsurf/
@@ -260,18 +264,16 @@ univerzalniprompt/
 │   ├── cline/
 │   ├── aider/
 │   └── ...
+├── prompts/
+│   ├── VERSION                            ← Semver (aligned with CHANGELOG)
+│   ├── en/                                ← 00–07 English prompts
+│   └── sr/                                ← 00–07 Serbian prompts
 ├── .editorconfig
 ├── .gitignore
 ├── LICENSE
-├── CONTRIBUTING.md
-├── CONTRIBUTING.sr.md
-├── SECURITY.md
-├── SECURITY.sr.md
-├── CHANGELOG.md
-├── CHANGELOG.sr.md
-└── prompts/
-    ├── en/                                ← 00-07 English prompts
-    └── sr/                                ← 00-07 Serbian prompts
+├── CONTRIBUTING.md / CONTRIBUTING.sr.md
+├── SECURITY.md / SECURITY.sr.md
+└── CHANGELOG.md / CHANGELOG.sr.md
 ```
 
 ---

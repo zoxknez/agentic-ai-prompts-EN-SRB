@@ -1,5 +1,7 @@
 # 🧠 Universal AI Engineering Prompts
 
+![Validate Prompts](https://github.com/zoxknez/agentic-ai-prompts-EN-SRB/actions/workflows/validate-prompts.yml/badge.svg)
+
 **Strukturirani, produkcijski promptovi za rad sa AI coding agentima.**
 
 Kolekcija od **8 univerzalnih promptova** koji pokrivaju **ceo životni ciklus razvoja softvera** - od brzog konteksta sesije i prvog mapiranja projekta, kroz reviziju koda, tech debt triage, ispravljanje bagova, dodavanje funkcionalnosti, PR review, pa sve do kompletnog QA i sigurnosnog skeniranja.
@@ -240,44 +242,30 @@ Dodaj u kontekst npr. `Stack type: CLI tool (Rust)` da agent preskoči web-only 
 
 ```
 univerzalniprompt/
-├── AGENTS.md                              ← Cross-tool instrukcije (kopiraj u svoje projekte)
-├── README.md
-├── README.sr.md                           ← Ovaj fajl (srpski)
+├── .github/
+│   └── workflows/
+│       └── validate-prompts.yml
+├── AGENTS.md
+├── README.md / README.sr.md
 ├── examples/
 │   ├── README.md
 │   ├── sample-architecture-report.md
-│   ├── sample-audit-report.md
 │   └── ...
 ├── scripts/
 │   └── validate-prompts.js
-├── integrations/                          ← Template-i po agentu (vidi integrations/README.sr.md)
+├── integrations/
+│   ├── README.md / README.sr.md
 │   ├── templates/
 │   ├── cursor/
-│   ├── windsurf/
-│   ├── github-copilot/
-│   ├── cline/
-│   ├── aider/
 │   └── ...
-├── .editorconfig
-├── .gitignore
+├── prompts/
+│   ├── VERSION
+│   ├── en/                                ← 00–07 (engleski)
+│   └── sr/                                ← 00–07 (srpski)
 ├── LICENSE
-├── CONTRIBUTING.md
-├── CONTRIBUTING.sr.md
-├── SECURITY.md
-├── SECURITY.sr.md
-├── CHANGELOG.md
-├── CHANGELOG.sr.md
-└── prompts/
-    ├── en/                                ← Promptovi 00-07 (engleski)
-    └── sr/
-        ├── 00-quick-context.md
-        ├── 01-architecture-scan.md
-        ├── 02-post-vibe-audit.md
-        ├── 03-safe-refactor.md
-        ├── 04-feature-implementation.md
-        ├── 05-deep-scan.md
-        ├── 06-tech-debt-triage.md
-        └── 07-pr-review.md
+├── CONTRIBUTING.md / CONTRIBUTING.sr.md
+├── SECURITY.md / SECURITY.sr.md
+└── CHANGELOG.md / CHANGELOG.sr.md
 ```
 
 ---

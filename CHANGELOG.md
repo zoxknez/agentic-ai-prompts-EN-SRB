@@ -4,6 +4,22 @@ All notable changes to the **Universal AI Engineering Prompts** project will be 
 
 ---
 
+## [1.2.2] - 2026-07-01
+
+### Added
+- **CI badge** in README (EN/SR).
+- **Stricter validator**: Compact Mode must be last section, EN/SR heading parity, markdown link checks, workflow file check, CHANGELOG ↔ VERSION sync (both EN/SR changelogs).
+
+### Changed
+- **GitHub Actions** workflow renamed to `Validate Prompts`, Node 22; validation consolidated in `validate-prompts.js`.
+- **README repository structure** fixed — `integrations/` no longer listed under `prompts/`.
+
+### Fixed
+- Validator CRLF handling on Windows.
+- Duplicate `## Prompt` check removed.
+
+---
+
 ## [1.2.1] - 2026-07-01
 
 ### Added

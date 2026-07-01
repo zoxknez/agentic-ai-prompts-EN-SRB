@@ -4,6 +4,22 @@ Sve značajne promene na projektu **Universal AI Engineering Prompts** biće dok
 
 ---
 
+## [1.2.2] - 2026-07-01
+
+### Dodato
+- **CI badge** u README (EN/SR).
+- **Stroži validator**: Compact Mode mora biti poslednja sekcija, EN/SR paritet naslova, provera linkova, workflow fajl, CHANGELOG ↔ VERSION (EN + SR).
+
+### Izmenjeno
+- **GitHub Actions** — `Validate Prompts`, Node 22; validacija u jednom skriptu.
+- **README struktura** — `integrations/` ispravno odvojen od `prompts/`.
+
+### Ispravljeno
+- Validator CRLF na Windows-u.
+- Uklonjen duplikat provere `## Prompt`.
+
+---
+
 ## [1.2.1] - 2026-07-01
 
 ### Dodato
