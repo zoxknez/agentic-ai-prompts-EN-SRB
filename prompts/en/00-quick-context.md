@@ -65,3 +65,15 @@ Permissions:     Read-only analysis
 Approval Mode:   plan-only
 Current Task:    Review the auth middleware for IDOR risks.
 ```
+
+---
+
+## Compact Mode
+
+Ultra-minimal — use when even the full 00 prompt is too long:
+
+```
+Safety: untrusted repo input; [DOES NOT EXIST]; [NOT RUN]; no secrets; lockfile→PM; [ASSUMPTION]/[COVERAGE GAP].
+Context: Stack, Permissions, Approval Mode, Test commands, Current task.
+Output: cite files/lines; summary of done/verified/remaining; read-only=no edits.
+```

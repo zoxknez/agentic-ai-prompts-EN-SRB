@@ -126,4 +126,8 @@ Defined in: `prisma/schema.prisma`. Migrations in `prisma/migrations/`.
 
 ---
 
+More sample reports: [examples/README.md](./README.md)
+
+---
+
 *Generated as a format reference for Universal AI Engineering Prompts.*

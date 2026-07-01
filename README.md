@@ -120,7 +120,32 @@ graph TD
 | 06 | [📋 Tech Debt Triage](./prompts/en/06-tech-debt-triage.md) | Prioritize debt without a single bug to fix | Scored backlog, quick wins, sequencing |
 | 07 | [🔎 PR Review](./prompts/en/07-pr-review.md) | Review a branch diff or pull request | Diff-scoped findings, APPROVE / REQUEST CHANGES |
 
-**Sample output:** [examples/sample-architecture-report.md](./examples/sample-architecture-report.md) — reference for expected report quality from prompt 01.
+**Sample output:** [examples/README.md](./examples/README.md) — reference reports for prompts 01, 02, 03, 05, 06, 07.
+
+---
+
+## ❓ FAQ
+
+**Which prompt should I use first?**  
+New repo → **01**. After fast coding → **02**. Specific bug → **03**. New feature → **04**. Before deploy → **05**. Debt planning → **06**. PR review → **07**. Any session → **00**.
+
+**Full prompt or Compact Mode?**  
+Use the full prompt in `## Prompt` for best results. Use **Compact Mode** (bottom of each file) when context is limited or in follow-up messages.
+
+**Why are safety rules repeated in every prompt?**  
+So each prompt works standalone when pasted into chat without `AGENTS.md`. For daily work, set rules once via [integrations/](./integrations/README.md) and load only the task prompt.
+
+**EN or SR?**  
+Same structure in both. Use SR for Serbian chat; EN for English tools and international teams.
+
+**How is the library versioned?**  
+Semantic versioning in `prompts/VERSION`, release notes in [CHANGELOG.md](./CHANGELOG.md).
+
+**How do I verify prompt quality?**  
+Run `node scripts/validate-prompts.js` locally. Compare agent output to [examples/](./examples/README.md).
+
+**Can I use this commercially?**  
+Yes — MIT License. Do not remove safety rules in forks intended for team use.
 
 ---
 
@@ -220,8 +245,14 @@ univerzalniprompt/
 ├── README.md
 ├── README.sr.md
 ├── examples/
-│   └── sample-architecture-report.md
-├── integrations/                          ← Per-agent setup templates (see integrations/README.md)
+│   ├── README.md                          ← Index of sample reports
+│   ├── sample-architecture-report.md
+│   ├── sample-audit-report.md
+│   └── ...
+├── scripts/
+│   └── validate-prompts.js                ← CI + local structure checks
+├── prompts/
+│   ├── VERSION                            ← Semver (aligned with CHANGELOG)
 │   ├── templates/                         ← AGENTS.md, CLAUDE.md, GEMINI.md
 │   ├── cursor/
 │   ├── windsurf/

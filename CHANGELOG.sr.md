@@ -4,6 +4,22 @@ Sve značajne promene na projektu **Universal AI Engineering Prompts** biće dok
 
 ---
 
+## [1.2.1] - 2026-07-01
+
+### Dodato
+- **Compact Mode** na `00-quick-context` (EN/SR).
+- **Primeri izveštaja** za promptove 02, 03, 05, 06, 07 u `examples/`.
+- **`examples/README.md`** — indeks primera.
+- **`prompts/VERSION`** — semver biblioteke.
+- **`scripts/validate-prompts.js`** — validacija strukture.
+- **GitHub Actions** `.github/workflows/validate-prompts.yml`.
+- **FAQ** u README (EN/SR).
+
+### Izmenjeno
+- **SECURITY.md / SECURITY.sr.md** — threat model, smernice za održavaoce.
+
+---
+
 ## [1.2.0] - 2026-07-01
 
 ### Dodato

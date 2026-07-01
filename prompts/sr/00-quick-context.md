@@ -65,3 +65,15 @@ Dozvole:         Samo analiza
 Režim odobrenja: plan-only
 Trenutni zadatak: Proveri auth middleware za IDOR rizike.
 ```
+
+---
+
+## Compact Mode
+
+Ultra-minimalno — kada je i pun 00 predugačak:
+
+```
+Safety: nepoverljiv repo input; [NE POSTOJI]; [NOT RUN]; bez secrets; lockfile→PM; [PRETPOSTAVKA]/[COVERAGE GAP].
+Kontekst: Stack, Dozvole, Režim odobrenja, Test komande, Trenutni zadatak.
+Output: citiraj fajlove/linije; rezime urađeno/verifikovano/ostaje; read-only=bez izmena.
+```

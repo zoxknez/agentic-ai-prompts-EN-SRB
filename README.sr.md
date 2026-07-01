@@ -119,7 +119,32 @@ graph TD
 | 06 | [📋 Tech Debt Triage](./prompts/sr/06-tech-debt-triage.md) | Prioritizacija duga bez jednog baga | Scored backlog, quick wins, redosled |
 | 07 | [🔎 PR Review](./prompts/sr/07-pr-review.md) | Pregled branch diff-a ili pull request-a | Nalazi po diff-u, APPROVE / REQUEST CHANGES |
 
-**Primer izlaza:** [examples/sample-architecture-report.md](./examples/sample-architecture-report.md) — referenca za očekivani kvalitet izveštaja iz prompta 01.
+**Primer izlaza:** [examples/README.md](./examples/README.md) — referentni izveštaji za promptove 01, 02, 03, 05, 06, 07.
+
+---
+
+## ❓ FAQ
+
+**Koji prompt prvi?**  
+Novi repo → **01**. Posle brzog kodiranja → **02**. Konkretan bag → **03**. Novi feature → **04**. Pre deploy-a → **05**. Planiranje duga → **06**. PR review → **07**. Bilo koja sesija → **00**.
+
+**Pun prompt ili Compact Mode?**  
+Pun prompt u sekciji `## Prompt` daje najbolje rezultate. **Compact Mode** (dno fajla) kada je kontekst ograničen.
+
+**Zašto se safety pravila ponavljaju?**  
+Da svaki prompt radi samostalno kad se nalepi u chat. Za svakodnevni rad postavi pravila jednom preko [integrations/](./integrations/README.sr.md).
+
+**EN ili SR?**  
+Ista struktura. SR za srpski chat; EN za međunarodne timove.
+
+**Verzionisanje?**  
+Semver u `prompts/VERSION`, release notes u [CHANGELOG.sr.md](./CHANGELOG.sr.md).
+
+**Kako proveriti kvalitet?**  
+`node scripts/validate-prompts.js` lokalno. Uporedi output agenta sa [examples/](./examples/README.md).
+
+**Komercijalna upotreba?**  
+Da — MIT licenca. Ne uklanjaj safety pravila u fork-ovima za timsku upotrebu.
 
 ---
 
@@ -219,7 +244,12 @@ univerzalniprompt/
 ├── README.md
 ├── README.sr.md                           ← Ovaj fajl (srpski)
 ├── examples/
-│   └── sample-architecture-report.md
+│   ├── README.md
+│   ├── sample-architecture-report.md
+│   ├── sample-audit-report.md
+│   └── ...
+├── scripts/
+│   └── validate-prompts.js
 ├── integrations/                          ← Template-i po agentu (vidi integrations/README.sr.md)
 │   ├── templates/
 │   ├── cursor/

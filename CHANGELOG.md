@@ -4,6 +4,22 @@ All notable changes to the **Universal AI Engineering Prompts** project will be 
 
 ---
 
+## [1.2.1] - 2026-07-01
+
+### Added
+- **Compact Mode** on `00-quick-context` (EN/SR) — closes parity gap with CONTRIBUTING standard.
+- **Sample reports** for prompts 02, 03, 05, 06, 07 in `examples/`.
+- **`examples/README.md`** — index linking samples to prompts.
+- **`prompts/VERSION`** — semantic versioning for the prompt library.
+- **`scripts/validate-prompts.js`** — validates EN/SR parity, Compact Mode, safety rules, examples.
+- **GitHub Actions** workflow `.github/workflows/validate-prompts.yml`.
+- **FAQ** section in README (EN/SR).
+
+### Changed
+- **SECURITY.md / SECURITY.sr.md** — threat model, maintainer guidelines, supported versions.
+
+---
+
 ## [1.2.0] - 2026-07-01
 
 ### Added
