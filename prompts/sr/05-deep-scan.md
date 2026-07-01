@@ -354,4 +354,17 @@ Test komande: npm run lint && npm run build && npm run test && npx playwright te
 Report lokacija: reports/deep-scan-2026-07-01.md
 ```
 
+---
+
+## Compact Mode
+
+```
+Deep scan QA/security. Prvo mapiraj sve rute, API-je, role, forme, postojeće testove.
+QA_RUN_ID prefiks za test podatke; cleanup na kraju. E2E svaka stranica, API positive/negative/auth,
+security smoke, a11y smoke, dependency audit [NOT RUN]. P0/P1 fix samo ako je minimalan sa repro-om.
+Ne stani na prvom bugu. Completion gate: sve mapirano, komande pokrenute ili [NOT RUN], izveštaj u
+reports/deep-scan-[datum].md sa route/API/test mapama, tabelom nalaza, cleanup statusom,
+P0/P1 rezimeom, residual risk. Global Safety Rules.
+```
+
 

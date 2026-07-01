@@ -1,0 +1,14 @@
+# Copy to project root as .aider.conf.yml
+# Docs: https://aider.chat/docs/config.html
+
+read:
+  - CONVENTIONS.md
+  - AGENTS.md
+
+# Uncomment and set for your project:
+# model: gpt-4o
+# auto-test-cmd: pnpm run test
+# lint-cmd: pnpm run lint
+
+# Add prompt files when starting aider for a specific task, e.g.:
+# aider --read prompts/en/03-safe-refactor.md

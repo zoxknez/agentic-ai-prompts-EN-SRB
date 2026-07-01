@@ -13,6 +13,11 @@ Act as a senior product-minded full-stack engineer.
 We need to implement a new feature:
 [DESCRIBE THE FEATURE HERE]
 
+APPROVAL_MODE: [autonomous | plan-only | step-by-step]
+- autonomous    → Create the plan, then implement immediately without waiting.
+- plan-only     → Create the plan and STOP. Wait for explicit approval before any file changes.
+- step-by-step  → Complete one phase (research, plan, or implementation chunk), then wait for approval.
+
 ═══════════════════════════════════════════════════
 GOLDEN RULES
 ═══════════════════════════════════════════════════
@@ -90,9 +95,8 @@ Before writing any code, draft a short plan:
 ### Assumptions:
 - [ ] List product/design decisions you made on your own. Mark each as [ASSUMPTION].
 
-*Note on approval*: If you are operating in an autonomous agentic mode, proceed with
-the implementation immediately after creating this plan. Otherwise, stop and wait
-for user approval before modifying files.
+*Approval*: Follow APPROVAL_MODE above. In plan-only or step-by-step mode, stop after
+the plan (or each phase) and wait for explicit user approval before modifying files.
 
 PHASE 3 - IMPLEMENTATION
 ────────────────────────
@@ -208,7 +212,21 @@ Only admin users are allowed to export.
 
 Stack: Next.js 16, Prisma 7, PostgreSQL, Tailwind 4
 Permissions: Allowed to modify code.
+Approval Mode:   plan-only
 Test commands: npm run lint && npm run build && npm run test
+```
+
+---
+
+## Compact Mode
+
+```
+Feature implementation. APPROVAL_MODE: [autonomous|plan-only|step-by-step]. Research
+similar patterns first. Plan: files to create/modify, deps, migrations, [ASSUMPTION]s.
+Implement complete feature: UI, validation, loading/error/empty states, auth if needed,
+a11y smoke, tests. Run lint/build/tests. Report: what was added, files table, how to use,
+verification [NOT RUN], coverage gaps. Reuse existing patterns — no invented architecture.
+Global Safety Rules.
 ```
 
 

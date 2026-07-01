@@ -1,0 +1,21 @@
+---
+description: Route tasks to the correct Universal AI Engineering Prompt
+alwaysApply: false
+---
+
+# Prompt Routing
+
+| User intent | Load this prompt |
+|-------------|------------------|
+| New repo / onboarding | `@prompts/en/01-architecture-scan.md` |
+| Quick session rules only | `@prompts/en/00-quick-context.md` |
+| Audit after fast coding | `@prompts/en/02-post-vibe-audit.md` |
+| Fix a specific bug | `@prompts/en/03-safe-refactor.md` |
+| Add a feature | `@prompts/en/04-feature-implementation.md` |
+| Pre-deploy QA + security | `@prompts/en/05-deep-scan.md` |
+| Prioritize tech debt | `@prompts/en/06-tech-debt-triage.md` |
+| Review PR / branch diff | `@prompts/en/07-pr-review.md` |
+
+Serbian: replace `en` with `sr`.
+
+After loading, append the session context block from README (stack, permissions, test commands).

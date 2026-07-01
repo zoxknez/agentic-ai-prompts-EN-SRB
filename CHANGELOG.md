@@ -4,6 +4,28 @@ All notable changes to the **Universal AI Engineering Prompts** project will be 
 
 ---
 
+## [1.2.0] - 2026-07-01
+
+### Added
+- **`integrations/`** — Ready-to-copy agent configs for Cursor, Claude Code, Windsurf, GitHub Copilot, Cline, Roo Code, Aider, Continue, Gemini CLI, ChatGPT/Custom GPT, JetBrains AI, Amazon Q.
+- **`AGENTS.md`** at repo root — cross-tool standard (Codex, Copilot, Cursor, Windsurf, Cline, Aider, etc.).
+- Integration guides: `integrations/README.md` and `integrations/README.sr.md`.
+- **00 Quick Context**: Lightweight session starter with Global Safety Rules and context template (EN/SR).
+- **06 Tech Debt Triage**: Prioritize technical debt without code changes — scored backlog and sequencing (EN/SR).
+- **07 PR Review**: Diff-scoped pull request review with BLOCKER/MAJOR/MINOR/NIT and verdict (EN/SR).
+- **Compact Mode**: Shortened prompt variant at the bottom of every prompt file (00-07).
+- **APPROVAL_MODE** on prompt 04: `autonomous | plan-only | step-by-step`.
+- **Sample report**: `examples/sample-architecture-report.md` as quality reference for prompt 01.
+- **Stack Adaptations** appendix in README (API-only, CLI, mobile, monorepo).
+
+### Changed
+- README workflow diagram now includes Tech Debt Triage (06) and PR Review (07).
+- Cursor integration docs updated for `.cursor/rules/` (recommended) alongside legacy `.cursorrules`.
+- Context template extended with `Approval Mode` field.
+- Collection size updated from 5 to 8 prompts.
+
+---
+
 ## [1.1.0] - 2026-07-01
 
 ### Added

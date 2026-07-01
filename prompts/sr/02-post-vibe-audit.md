@@ -261,4 +261,17 @@ ali nisam siguran da li je bezbedna i stabilna za produkciju.
 Dozvole: Samo analiza - ne menjaj ništa.
 ```
 
+---
+
+## Compact Mode
+
+```
+Post-vibe audit — samo čitanje. Pre-flight rezime, zatim 22 ugla (arhitektura, security,
+auth, RBAC, API validacija, state, greške, edge case-ovi, performance, a11y, testovi,
+build/deploy, env, logging, deps, UX, duplikacija, mrtav kod, tipovi, upload, integracije,
+lokalizacija). Svaki nalaz P0-P3 sa fajlom/lokacijom i fix-om. Izveštaj: executive summary,
+nalazi po oblastima, P0-P3 tabela, redosled fix-eva, šta NE menjati, residual risk
+[COVERAGE GAP]. NE menjaj kod. Global Safety Rules. [NOT RUN] ako nije verifikovano.
+```
+
 

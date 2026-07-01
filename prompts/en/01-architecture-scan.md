@@ -196,4 +196,17 @@ URL: http://localhost:3000
 Permissions: Analysis only, do not change any code.
 ```
 
+---
+
+## Compact Mode
+
+```
+Architecture scan — read-only. Map: folder structure, stack, routes, API endpoints, auth,
+roles, data models, tests, build commands, env vars, integrations, dependency health,
+risk areas. Pre-flight summary first. Mark [DOES NOT EXIST], [UNKNOWN], [ASSUMPTION], [NOT RUN].
+Final report: overview, architecture map, routes/API table, auth map, data models, tests,
+dependency health, top risks, quick wins, next steps. Do NOT change code until report is done.
+Apply Global Safety Rules.
+```
+
 

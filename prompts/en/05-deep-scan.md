@@ -355,4 +355,17 @@ Test commands: npm run lint && npm run build && npm run test && npx playwright t
 Report location: reports/deep-scan-2026-07-01.md
 ```
 
+---
+
+## Compact Mode
+
+```
+Deep scan QA/security. Map all routes, APIs, roles, forms, existing tests first.
+Use QA_RUN_ID prefix for test data; cleanup at end. E2E every page, API positive/negative/auth
+scenarios, security smoke, a11y smoke, dependency audit [NOT RUN]. Fix P0/P1 only if minimal
+with repro. Do not stop on first bug. Completion gate: all mapped, commands run or [NOT RUN],
+report at reports/deep-scan-[date].md with route/API/test maps, findings table, cleanup status,
+P0/P1 summary, residual risk. Global Safety Rules.
+```
+
 

@@ -160,4 +160,16 @@ Permissions: Allowed to modify code and run tests.
 Test commands: npm run lint && npm run build && npm run test
 ```
 
+---
+
+## Compact Mode
+
+```
+Safe bug fix. Steps: reproduce → root cause (file/lines/why) → minimal fix proposal →
+implement → add test that fails before fix → run lint/build/all tests. Do not change
+business logic, API contracts, or weaken tests. If unsafe, propose only and wait.
+Report: problem, root cause, changed files table, tests, verification results [NOT RUN]
+, assumptions, risks. Global Safety Rules.
+```
+
 

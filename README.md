@@ -4,9 +4,11 @@
 
 **Structured, production-grade prompts for working with AI coding agents.**
 
-A collection of 5 universal prompts covering the **entire software development lifecycle** - from initial repository mapping to code audits, safe refactoring, feature implementation, and comprehensive QA/security deep scans.
+A collection of **8 universal prompts** covering the **entire software development lifecycle** - from lightweight session context and initial repository mapping, through code audits, tech debt triage, safe refactoring, feature implementation, PR review, and comprehensive QA/security deep scans.
 
-Optimized for: **Cursor**, **Windsurf**, **Claude (Code, Projects, API)**, **Copilot Agent**, **ChatGPT / Codex**, **Gemini**, and similar tools.
+Optimized for: **Cursor**, **Claude Code**, **Windsurf**, **GitHub Copilot**, **Cline**, **Roo Code**, **Aider**, **Continue**, **OpenAI Codex**, **ChatGPT**, **Gemini**, **JetBrains AI**, **Amazon Q**, and similar tools.
+
+> **Agent setup:** Ready-to-copy configs in **[integrations/](./integrations/README.md)** (EN) · **[integrations/README.sr.md](./integrations/README.sr.md)** (SR)
 
 ---
 
@@ -87,15 +89,21 @@ graph TD
     A["🆕 New project / repository"] --> B["1 · Architecture Scan"]
     B --> C{"Writing code"}
     C --> D["2 · Post-Vibe Audit"]
+    D -->|"Accumulated debt"| T["6 · Tech Debt Triage"]
     D -->|"P0/P1 bugs"| E["3 · Safe Refactor"]
     D -->|"Code stable"| F["4 · Feature Implementation"]
+    T --> E
+    T --> F
     E --> C
-    F --> G["5 · QA & Security Deep Scan"]
+    F --> PR["7 · PR Review"]
+    PR --> G["5 · QA & Security Deep Scan"]
     G -->|"Regressions"| E
     G -->|"✅ All green"| H["🚀 Production Ready"]
 ```
 
 > **Each prompt can also be used independently** - you do not need to follow the entire cycle.
+> Use **[00 Quick Context](./prompts/en/00-quick-context.md)** at the start of any session for safety rules with minimal token overhead.
+> Each prompt file includes a **Compact Mode** section for limited context windows.
 
 ---
 
@@ -103,57 +111,72 @@ graph TD
 
 | # | Prompt | When to Use | Main Output |
 |:--|:-------|:--------------|:-------------|
+| 00 | [⚡ Quick Context](./prompts/en/00-quick-context.md) | Start of any session; minimal overhead | Safety rules + session context block |
 | 01 | [🔍 Architecture Scan](./prompts/en/01-architecture-scan.md) | First introduction to a project | Architecture map, routes, data models, technical debt |
 | 02 | [🛡️ Post-Vibe Audit](./prompts/en/02-post-vibe-audit.md) | Serious audit after rapid ("vibe") coding | P0-P3 findings table, security threats, UX gaps |
 | 03 | [🩹 Safe Refactor](./prompts/en/03-safe-refactor.md) | Fixing proven bugs without breaking things | Root cause, minimal patch, test verification |
-| 04 | [✨ Feature Implementation](./prompts/en/04-feature-implementation.md) | Controlled implementation of new features | Short plan, implementation matching existing patterns, tests |
+| 04 | [✨ Feature Implementation](./prompts/en/04-feature-implementation.md) | Controlled implementation of new features | Plan, implementation matching patterns, tests |
 | 05 | [🚀 Deep Scan](./prompts/en/05-deep-scan.md) | Full QA + security/supply-chain audit | E2E/API test coverage, deep-scan report, residual risk |
+| 06 | [📋 Tech Debt Triage](./prompts/en/06-tech-debt-triage.md) | Prioritize debt without a single bug to fix | Scored backlog, quick wins, sequencing |
+| 07 | [🔎 PR Review](./prompts/en/07-pr-review.md) | Review a branch diff or pull request | Diff-scoped findings, APPROVE / REQUEST CHANGES |
+
+**Sample output:** [examples/sample-architecture-report.md](./examples/sample-architecture-report.md) — reference for expected report quality from prompt 01.
 
 ---
 
 ## 🚀 Quick Start
 
 ```
-1. Choose the prompt matching your current task (01-05).
+1. Start with 00 Quick Context (optional) or choose the task prompt (01-07).
 2. Paste it into your AI coding assistant (Cursor, Claude, Copilot, ChatGPT...).
-3. Add context: stack, URL, test account, permissions, and test commands.
-4. Demand a final report.
-5. Do not accept results without specific files, commands, and verification runs.
+3. Add context: stack, URL, test account, permissions, approval mode, and test commands.
+4. Use Compact Mode (bottom of each prompt file) if context is limited.
+5. Demand a final report. Compare against the sample report for prompt 01.
+6. Do not accept results without specific files, commands, and verification runs.
 ```
 
 ---
 
 ## ⚙️ How to Integrate with Tools
 
-### Cursor
+Full copy-paste guides, file paths, and PowerShell commands: **[integrations/README.md](./integrations/README.md)**
 
-Two options:
-1. **`.cursorrules`** - Copy the contents of the chosen prompt into your `.cursorrules` file in the root of the project.
-2. **`@` references** - In the Cursor chat, use `@prompts/en/01-architecture-scan.md` to load the prompt as context.
+### Quick reference
 
-### Windsurf
+| Agent | What to copy | Where |
+|-------|--------------|-------|
+| **All agents** | `integrations/templates/AGENTS.md` | `AGENTS.md` (project root) |
+| **Cursor** | `integrations/cursor/*.mdc` | `.cursor/rules/` |
+| **Claude Code** | `integrations/templates/CLAUDE.md` | `CLAUDE.md` |
+| **Windsurf** | `integrations/windsurf/windsurfrules` | `.windsurfrules` |
+| **GitHub Copilot** | `integrations/github-copilot/copilot-instructions.md` | `.github/copilot-instructions.md` |
+| **Cline / Roo Code** | `integrations/cline/*.md` | `.clinerules/` |
+| **Aider** | `integrations/aider/CONVENTIONS.md` + `aider.conf.yml` | project root |
+| **Continue.dev** | `integrations/continue/rules.md` | Continue config |
+| **Gemini CLI** | `integrations/templates/GEMINI.md` | `GEMINI.md` |
+| **ChatGPT / Custom GPT** | `integrations/openai/custom-gpt-instructions.md` | GPT Instructions |
+| **JetBrains AI** | `integrations/jetbrains/ai-assistant-rules.md` | Project Rules UI |
+| **Amazon Q** | `integrations/templates/AGENTS.md` | `.amazonq/rules/` |
 
-Create a `.windsurfrules` file in the root of your project and reference the appropriate prompt, or paste it directly into the chat.
+### Universal usage (any tool)
 
-### Claude (Projects / API)
+1. Copy `prompts/` into your project (or use this repo as a submodule).
+2. Copy `integrations/templates/AGENTS.md` → `AGENTS.md`.
+3. In chat, paste a task prompt from `prompts/en/0X-*.md` or use **Compact Mode** at the bottom of the file.
+4. Append the [context block](#-maximizing-results---context-template) below.
 
-1. Create a new **Project** on claude.ai.
-2. Upload the `.md` files to **Project Knowledge**.
-3. In **Custom Instructions**, add:
-   > *"Follow the appropriate prompt from the project knowledge: 01 for mapping, 02 for audit, 03 for bug-fix, 04 for feature implementation, 05 for QA/security scan."*
+### Cursor (details)
 
-### ChatGPT / Codex / Custom GPTs
+- **Recommended:** `cp integrations/cursor/*.mdc .cursor/rules/`
+- **Chat:** `@prompts/en/01-architecture-scan.md` + context block
+- **Legacy:** `integrations/cursor/cursorrules-legacy` → `.cursorrules`
 
-1. Create a **Custom GPT** or use the **Codex** agent.
-2. Upload the prompts as Knowledge files.
-3. Or simply paste the prompt at the beginning of your conversation.
+### Claude Projects (web)
 
-### Gemini / Other Agents
-
-Paste the chosen prompt as the first input in your conversation. All prompts are written in a universal format compatible with any LLM.
+Upload `prompts/en/*.md` to Project Knowledge. Custom Instructions → use prompt index from `integrations/openai/custom-gpt-instructions.md`.
 
 > [!NOTE]
-> Tool-specific rule file names may change over time. If your tool has newer project rules, memory, or custom instruction features, paste the selected prompt there.
+> Config file names evolve. `AGENTS.md` is the cross-tool standard; tool-specific files add features (globs, hooks, modes). See [integrations/](./integrations/README.md) for updates.
 
 ---
 
@@ -166,6 +189,7 @@ Stack:           [e.g., Next.js 16, Prisma 7, PostgreSQL, Tailwind 4]
 URL:             [e.g., http://localhost:3000]
 Test Account:    [e.g., admin@test.com / password123]
 Permissions:     [e.g., "You are allowed to modify code" or "Read-only analysis"]
+Approval Mode:   [autonomous | plan-only | step-by-step]  ← required for prompt 04
 Bug-fix Policy:  [e.g., "Allowed to fix P0/P1 bugs directly"]
 Test Commands:   [e.g., npm run lint && npm run build && npm run test]
 Report Location: [e.g., reports/ folder]
@@ -173,24 +197,50 @@ Report Location: [e.g., reports/ folder]
 
 ---
 
+## 🧩 Stack Adaptations (Non-Web Projects)
+
+Prompts default to web/full-stack examples. Adapt mapping and testing sections as follows:
+
+| Stack | Prompt 01 — map instead of… | Prompt 05 — test instead of… |
+|-------|-----------------------------|------------------------------|
+| **REST/GraphQL API only** (FastAPI, Express, Go) | Routes/pages → OpenAPI routes, CLI entrypoints | E2E pages → HTTP contract tests, OpenAPI coverage |
+| **CLI / batch** (Python, Rust, Go) | Routes → subcommands, config files, exit codes | UI viewports → stdout/stderr, exit codes, fixture I/O |
+| **Mobile** (React Native, Flutter) | Pages → screens, deep links | Browser E2E → device/emulator flows or Detox/Maestro |
+| **Monorepo** | Single app tree → packages/apps matrix per workspace | One URL → per-app targets from `package.json` workspaces |
+
+Add one line to your context block, e.g. `Stack type: CLI tool (Rust)` so the agent skips irrelevant web-only checks.
+
+---
+
 ## 🏗️ Repository Structure
 
 ```
-agentic-ai-prompts-EN-SRB/
-├── README.md                              ← English README (This file)
-├── README.sr.md                           ← Serbian README
-├── .editorconfig                          ← Encoding and line-ending rules
-├── .gitignore                             ← Local archive ignores
-├── LICENSE                                ← MIT License
-├── CONTRIBUTING.md                        ← English Contribution Guidelines
-├── CONTRIBUTING.sr.md                     ← Serbian Contribution Guidelines
-├── SECURITY.md                            ← English Security Policy
-├── SECURITY.sr.md                         ← Serbian Security Policy
-├── CHANGELOG.md                           ← English Changelog
-├── CHANGELOG.sr.md                        ← Serbian Changelog
+univerzalniprompt/
+├── AGENTS.md                              ← Cross-tool instructions (copy to your projects)
+├── README.md
+├── README.sr.md
+├── examples/
+│   └── sample-architecture-report.md
+├── integrations/                          ← Per-agent setup templates (see integrations/README.md)
+│   ├── templates/                         ← AGENTS.md, CLAUDE.md, GEMINI.md
+│   ├── cursor/
+│   ├── windsurf/
+│   ├── github-copilot/
+│   ├── cline/
+│   ├── aider/
+│   └── ...
+├── .editorconfig
+├── .gitignore
+├── LICENSE
+├── CONTRIBUTING.md
+├── CONTRIBUTING.sr.md
+├── SECURITY.md
+├── SECURITY.sr.md
+├── CHANGELOG.md
+├── CHANGELOG.sr.md
 └── prompts/
-    ├── en/                                ← English versions of prompts
-    └── sr/                                ← Serbian versions of prompts
+    ├── en/                                ← 00-07 English prompts
+    └── sr/                                ← 00-07 Serbian prompts
 ```
 
 ---

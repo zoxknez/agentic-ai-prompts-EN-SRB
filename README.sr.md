@@ -2,9 +2,11 @@
 
 **Strukturirani, produkcijski promptovi za rad sa AI coding agentima.**
 
-Kolekcija od 5 univerzalnih promptova koji pokrivaju **ceo životni ciklus razvoja softvera** - od prvog mapiranja projekta, kroz reviziju koda, ispravljanje bagova, dodavanje funkcionalnosti, pa sve do kompletnog QA i sigurnosnog skeniranja.
+Kolekcija od **8 univerzalnih promptova** koji pokrivaju **ceo životni ciklus razvoja softvera** - od brzog konteksta sesije i prvog mapiranja projekta, kroz reviziju koda, tech debt triage, ispravljanje bagova, dodavanje funkcionalnosti, PR review, pa sve do kompletnog QA i sigurnosnog skeniranja.
 
-Dizajnirani su za rad sa: **Cursor**, **Windsurf**, **Claude (Code, Projects, API)**, **Copilot Agent**, **ChatGPT / Codex**, **Gemini** i sličnim alatima.
+Dizajnirani su za: **Cursor**, **Claude Code**, **Windsurf**, **GitHub Copilot**, **Cline**, **Roo Code**, **Aider**, **Continue**, **OpenAI Codex**, **ChatGPT**, **Gemini**, **JetBrains AI**, **Amazon Q** i slične alate.
+
+> **Setup za agente:** Gotovi config-i u **[integrations/](./integrations/README.sr.md)** (SR) · **[integrations/README.md](./integrations/README.md)** (EN)
 
 ---
 
@@ -86,15 +88,21 @@ graph TD
     A["🆕 Novi projekat / repozitorijum"] --> B["1 · Architecture Scan"]
     B --> C{"Pisanje koda"}
     C --> D["2 · Post-Vibe Audit"]
+    D -->|"Nagomilao se dug"| T["6 · Tech Debt Triage"]
     D -->|"P0/P1 bagovi"| E["3 · Safe Refactor"]
     D -->|"Kod stabilan"| F["4 · Feature Implementation"]
+    T --> E
+    T --> F
     E --> C
-    F --> G["5 · QA & Security Deep Scan"]
+    F --> PR["7 · PR Review"]
+    PR --> G["5 · QA & Security Deep Scan"]
     G -->|"Regresije"| E
     G -->|"✅ Sve zeleno"| H["🚀 Production Ready"]
 ```
 
 > **Svaki prompt se može koristiti i nezavisno** - ne moraš da pratiš ceo ciklus.
+> Koristi **[00 Brzi Kontekst](./prompts/sr/00-quick-context.md)** na početku sesije za safety pravila sa minimalnim token overhead-om.
+> Svaki prompt fajl ima **Compact Mode** sekciju za ograničen kontekst.
 
 ---
 
@@ -102,57 +110,72 @@ graph TD
 
 | # | Prompt | Kada koristiti | Glavni output |
 |:--|:-------|:--------------|:-------------|
+| 00 | [⚡ Brzi Kontekst](./prompts/sr/00-quick-context.md) | Početak bilo koje sesije | Safety pravila + kontekst blok |
 | 01 | [🔍 Architecture Scan](./prompts/sr/01-architecture-scan.md) | Prvo upoznavanje sa projektom | Arhitektonska mapa, rute, modeli, rizici |
 | 02 | [🛡️ Post-Vibe Audit](./prompts/sr/02-post-vibe-audit.md) | Posle brzog kodiranja - ozbiljna provera | P0-P3 tabela nalaza, sigurnost, UX |
 | 03 | [🩹 Safe Refactor](./prompts/sr/03-safe-refactor.md) | Ispravljanje bagova bez lomljenja | Root cause, minimalan patch, test verifikacija |
 | 04 | [✨ Feature Implementation](./prompts/sr/04-feature-implementation.md) | Kontrolisano dodavanje novog | Plan, implementacija po uzorima, testovi |
 | 05 | [🚀 Deep Scan](./prompts/sr/05-deep-scan.md) | Kompletan QA + security audit | E2E/API testovi, deep-scan report |
+| 06 | [📋 Tech Debt Triage](./prompts/sr/06-tech-debt-triage.md) | Prioritizacija duga bez jednog baga | Scored backlog, quick wins, redosled |
+| 07 | [🔎 PR Review](./prompts/sr/07-pr-review.md) | Pregled branch diff-a ili pull request-a | Nalazi po diff-u, APPROVE / REQUEST CHANGES |
+
+**Primer izlaza:** [examples/sample-architecture-report.md](./examples/sample-architecture-report.md) — referenca za očekivani kvalitet izveštaja iz prompta 01.
 
 ---
 
 ## 🚀 Quick Start
 
 ```
-1. Izaberi prompt prema zadatku (01-05).
+1. Počni sa 00 Brzi Kontekst (opciono) ili izaberi task prompt (01-07).
 2. Nalepi ga u AI coding agenta (Cursor, Claude, Copilot, ChatGPT...).
-3. Dodaj kontekst: stack, URL, test nalog, dozvole, test komande.
-4. Zahtevaj finalni report.
-5. Ne prihvataj rezultat bez konkretnih fajlova, komandi i statusa verifikacije.
+3. Dodaj kontekst: stack, URL, test nalog, dozvole, režim odobrenja, test komande.
+4. Koristi Compact Mode (dno svakog prompt fajla) ako je kontekst ograničen.
+5. Zahtevaj finalni report. Uporedi sa primerom izlaza za prompt 01.
+6. Ne prihvataj rezultat bez konkretnih fajlova, komandi i statusa verifikacije.
 ```
 
 ---
 
 ## ⚙️ Kako koristiti sa popularnim alatima
 
-### Cursor
+Kompletan vodič sa putanjama i PowerShell komandama: **[integrations/README.sr.md](./integrations/README.sr.md)**
 
-Dve opcije:
-1. **`.cursorrules`** - Kopiraj sadržaj željenog prompta u `.cursorrules` fajl u korenu projekta.
-2. **`@` reference** - U Cursor chatu koristi `@prompts/sr/01-architecture-scan.md` da učitaš prompt kao kontekst.
+### Brza referenca
 
-### Windsurf
+| Agent | Šta kopirati | Gde |
+|-------|--------------|-----|
+| **Svi agenti** | `integrations/templates/AGENTS.md` | `AGENTS.md` (koren projekta) |
+| **Cursor** | `integrations/cursor/*.mdc` | `.cursor/rules/` |
+| **Claude Code** | `integrations/templates/CLAUDE.md` | `CLAUDE.md` |
+| **Windsurf** | `integrations/windsurf/windsurfrules` | `.windsurfrules` |
+| **GitHub Copilot** | `integrations/github-copilot/copilot-instructions.md` | `.github/copilot-instructions.md` |
+| **Cline / Roo Code** | `integrations/cline/*.md` | `.clinerules/` |
+| **Aider** | `integrations/aider/CONVENTIONS.md` + `aider.conf.yml` | koren projekta |
+| **Continue.dev** | `integrations/continue/rules.md` | Continue config |
+| **Gemini CLI** | `integrations/templates/GEMINI.md` | `GEMINI.md` |
+| **ChatGPT / Custom GPT** | `integrations/openai/custom-gpt-instructions.md` | GPT Instructions |
+| **JetBrains AI** | `integrations/jetbrains/ai-assistant-rules.md` | Project Rules UI |
+| **Amazon Q** | `integrations/templates/AGENTS.md` | `.amazonq/rules/` |
 
-Kreiraj `.windsurfrules` fajl u korenu projekta i referenciraj željeni prompt, ili ga direktno nalepi u chat.
+### Univerzalno (bilo koji alat)
 
-### Claude (Projects / API)
+1. Kopiraj `prompts/` u projekat (ili submodule).
+2. Kopiraj `integrations/templates/AGENTS.md` → `AGENTS.md`.
+3. U chat nalepi task prompt iz `prompts/sr/0X-*.md` ili **Compact Mode** sa dna fajla.
+4. Dodaj [kontekst blok](#-maksimalni-rezultat---šta-uvek-dodati) ispod.
 
-1. Kreiraj novi **Project** na claude.ai.
-2. Učitaj `.md` fajlove u **Project Knowledge**.
-3. U **Custom Instructions** dodaj:
-   > *"Sledi odgovarajući prompt iz baze znanja: 01 za mapiranje, 02 za audit, 03 za bug-fix, 04 za feature, 05 za QA scan."*
+### Cursor (detalji)
 
-### ChatGPT / Codex / Custom GPTs
+- **Preporučeno:** `cp integrations/cursor/*.mdc .cursor/rules/`
+- **Chat:** `@prompts/sr/01-architecture-scan.md` + kontekst
+- **Legacy:** `integrations/cursor/cursorrules-legacy` → `.cursorrules`
 
-1. Kreiraj **Custom GPT** ili koristi **Codex** agent.
-2. Učitaj promptove kao Knowledge fajlove.
-3. Ili jednostavno nalepi željeni prompt na početku konverzacije.
+### Claude Projects (web)
 
-### Gemini / Ostali agenti
-
-Nalepi željeni prompt kao prvi unos u konverzaciji. Svi promptovi su napisani u univerzalnom formatu koji radi sa bilo kojim LLM-om.
+Uploaduj `prompts/sr/*.md` u Project Knowledge. Custom Instructions → indeks iz `integrations/openai/custom-gpt-instructions.md`.
 
 > [!NOTE]
-> Nazivi specifičnih konfiguracionih fajlova za alate se mogu promeniti tokom vremena. Ako vaš alat podržava novija pravila projekta, memoriju ili prilagođene instrukcije, nalepite izabrani prompt tamo.
+> `AGENTS.md` je cross-tool standard. Tool-specific fajlovi dodaju globs, hook-ove, mode-ove. Ažuriranja: [integrations/](./integrations/README.sr.md).
 
 ---
 
@@ -165,6 +188,7 @@ Stack:           [npr. Next.js 16, Prisma 7, PostgreSQL, Tailwind 4]
 URL:             [npr. http://localhost:3000]
 Test nalog:      [npr. admin@test.com / password123]
 Dozvole:         [npr. "Smeš da menjaš kod" ili "Samo analiza"]
+Režim odobrenja: [autonomous | plan-only | step-by-step]  ← obavezno za prompt 04
 Bug-fix:         [npr. "Smeš da ispravljaš P0/P1 bagove"]
 Test komande:    [npr. npm run lint && npm run build && npm run test]
 Report lokacija: [npr. reports/ folder]
@@ -172,29 +196,58 @@ Report lokacija: [npr. reports/ folder]
 
 ---
 
+## 🧩 Prilagođavanje stack-u (non-web projekti)
+
+Promptovi podrazumevaju web/full-stack primere. Prilagodi sekcije mapiranja i testiranja ovako:
+
+| Stack | Prompt 01 — mapiraj umesto… | Prompt 05 — testiraj umesto… |
+|-------|-----------------------------|------------------------------|
+| **Samo REST/GraphQL API** (FastAPI, Express, Go) | Rute/stranice → OpenAPI rute, CLI entrypoint-i | E2E stranice → HTTP contract testovi |
+| **CLI / batch** (Python, Rust, Go) | Rute → subkomande, config fajlovi, exit kodovi | Viewport-i → stdout/stderr, exit kodovi, fixture I/O |
+| **Mobile** (React Native, Flutter) | Stranice → ekrani, deep linkovi | Browser E2E → emulator flow ili Detox/Maestro |
+| **Monorepo** | Jedno stablo → matrica paketa po workspace-u | Jedan URL → target po app-u iz workspaces |
+
+Dodaj u kontekst npr. `Stack type: CLI tool (Rust)` da agent preskoči web-only provere.
+
+---
+
 ## 🏗️ Struktura repozitorijuma
 
 ```
-agentic-ai-prompts-EN-SRB/
-├── README.md                              ← Engleski README (glavni)
+univerzalniprompt/
+├── AGENTS.md                              ← Cross-tool instrukcije (kopiraj u svoje projekte)
+├── README.md
 ├── README.sr.md                           ← Ovaj fajl (srpski)
-├── .editorconfig                          ← Pravila za encoding i line endings
-├── .gitignore                             ← Ignorisanje lokalnih arhiva
-├── LICENSE                                ← MIT licenca
-├── CONTRIBUTING.md                        ← Kako doprineti (Engleski)
-├── CONTRIBUTING.sr.md                     ← Kako doprineti (Srpski)
-├── SECURITY.md                            ← Prijava sigurnosnih problema (Engleski)
-├── SECURITY.sr.md                         ← Prijava sigurnosnih problema (Srpski)
-├── CHANGELOG.md                           ← Istorija izmena (Engleski)
-├── CHANGELOG.sr.md                        ← Istorija izmena (Srpski)
+├── examples/
+│   └── sample-architecture-report.md
+├── integrations/                          ← Template-i po agentu (vidi integrations/README.sr.md)
+│   ├── templates/
+│   ├── cursor/
+│   ├── windsurf/
+│   ├── github-copilot/
+│   ├── cline/
+│   ├── aider/
+│   └── ...
+├── .editorconfig
+├── .gitignore
+├── LICENSE
+├── CONTRIBUTING.md
+├── CONTRIBUTING.sr.md
+├── SECURITY.md
+├── SECURITY.sr.md
+├── CHANGELOG.md
+├── CHANGELOG.sr.md
 └── prompts/
-    ├── en/                                ← Engleska verzija promptova
+    ├── en/                                ← Promptovi 00-07 (engleski)
     └── sr/
-        ├── 01-architecture-scan.md        ← Mapiranje projekta
-        ├── 02-post-vibe-audit.md          ← Revizija posle brzog kodiranja
-        ├── 03-safe-refactor.md            ← Bezbedan refaktor i bug-fix
-        ├── 04-feature-implementation.md   ← Kontrolisano dodavanje fičera
-        └── 05-deep-scan.md                ← QA i security dubinski scan
+        ├── 00-quick-context.md
+        ├── 01-architecture-scan.md
+        ├── 02-post-vibe-audit.md
+        ├── 03-safe-refactor.md
+        ├── 04-feature-implementation.md
+        ├── 05-deep-scan.md
+        ├── 06-tech-debt-triage.md
+        └── 07-pr-review.md
 ```
 
 ---

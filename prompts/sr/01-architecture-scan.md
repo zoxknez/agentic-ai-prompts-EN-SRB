@@ -195,5 +195,18 @@ URL: http://localhost:3000
 Dozvole: Samo analiza, ne menjaj kod.
 ```
 
+---
+
+## Compact Mode
+
+```
+Architecture scan — samo čitanje. Mapiraj: struktura foldera, stack, rute, API endpoint-i,
+auth, role, modeli, testovi, build komande, env varijable, integracije, dependency health,
+rizične oblasti. Pre-flight rezime prvo. Označi [NE POSTOJI], [UNKNOWN], [PRETPOSTAVKA], [NOT RUN].
+Finalni izveštaj: pregled, arhitektura, tabela ruta/API-ja, auth mapa, modeli, testovi,
+dependency health, top rizici, quick wins, sledeći koraci. NE menjaj kod dok izveštaj nije gotov.
+Global Safety Rules.
+```
+
 
 

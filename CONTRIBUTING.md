@@ -28,8 +28,12 @@ If you want to improve an existing prompt:
 When editing or adding new prompts, please adhere to these standards:
 - **Global Safety Rules**: Every prompt must incorporate and follow our safety guidelines (prompt-injection defense, secrets redaction, no-fake-pass).
 - **Clear Structure**: Use standard separators (`════` and `───`) and clear XML/Markdown headings to help LLMs parse the instructions easily.
+- **Compact Mode**: Every prompt (including new ones) must end with a **Compact Mode** section — a single short block usable when context is limited.
+- **Bilingual Parity**: New prompts require both `prompts/en/` and `prompts/sr/` versions with equivalent structure.
+- **Agent Integrations**: New agent configs go under `integrations/<agent>/` and must be documented in `integrations/README.md`.
 - **Language Consistency**: Keep translations natural. English versions should use standard technical English terminology, while Serbian versions should balance local phrasing with standard industry terms.
 - **No Assumptions**: Enforce that the AI marks gaps and uncertainties using tags like `[ASSUMPTION]`, `[NOT RUN]`, or `[COVERAGE GAP]`.
+- **Sample Outputs**: Significant report-format changes should update `examples/sample-architecture-report.md` or add new examples under `examples/`.
 
 ---
 

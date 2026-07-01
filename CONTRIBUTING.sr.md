@@ -28,8 +28,12 @@ Ako želiš samostalno da unaprediš neki prompt:
 Kada menjaš ili dodaješ nove promptove, drži se sledećih standarda:
 - **Global Safety Rules**: Svaki prompt mora poštovati i imati ugrađene bezbednosne smernice (prompt-injection zaštita, secrets redaction, no-fake-pass).
 - **Jasna struktura**: Koristi separatore (`════` i `───`) i jasne XML ili Markdown naslove kako bi LLM lakše parsirao instrukcije.
-- **Srpsko-engleski balans**: Pošto je industrija na engleskom, koristi engleske tehničke pojmove (npr. *middleware*, *session*, *auth*, *endpoint*), ali opise i instrukcije piši na srpskom.
+- **Compact Mode**: Svaki prompt (uključujući nove) mora imati **Compact Mode** sekciju na kraju — kratak blok za ograničen kontekst.
+- **Bilingvalni paritet**: Novi promptovi zahtevaju verzije u `prompts/en/` i `prompts/sr/` sa istom strukturom.
+- **Agent integracije**: Novi config-i idu u `integrations/<agent>/` i moraju biti u `integrations/README.md`.
+- **Srpsko-engleski balans**: Koristi engleske tehničke pojmove, ali opise i instrukcije piši na srpskom.
 - **Bez pretpostavki**: Forsiraj AI da označi nepoznanice sa tagovima poput `[PRETPOSTAVKA]`, `[NOT RUN]` ili `[COVERAGE GAP]`.
+- **Primeri izlaza**: Značajne promene formata izveštaja ažuriraj u `examples/sample-architecture-report.md` ili dodaj nove primere u `examples/`.
 
 ---
 

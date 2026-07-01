@@ -260,4 +260,17 @@ but I'm not sure if it is secure and stable for production.
 Permissions: Analysis only - do not modify anything.
 ```
 
+---
+
+## Compact Mode
+
+```
+Post-vibe audit — read-only. Pre-flight summary, then analyze 22 angles (architecture,
+security, auth, RBAC, API validation, state, errors, edge cases, performance, a11y,
+testing, build/deploy, env, logging, deps, UX, duplication, dead code, types, uploads,
+integrations, localization). Classify every finding P0-P3 with file/location and fix.
+Report: executive summary, findings by area, P0-P3 table, fix order, what NOT to change,
+residual risk [COVERAGE GAP]. Do NOT modify code. Global Safety Rules. [NOT RUN] if unverified.
+```
+
 

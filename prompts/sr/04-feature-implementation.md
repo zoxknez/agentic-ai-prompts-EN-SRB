@@ -13,6 +13,11 @@ Radi kao senior product-minded full-stack engineer.
 Treba implementirati novu funkcionalnost:
 [OPIŠI FUNKCIONALNOST OVDE]
 
+APPROVAL_MODE: [autonomous | plan-only | step-by-step]
+- autonomous    → Napravi plan, zatim odmah implementiraj bez čekanja.
+- plan-only     → Napravi plan i STANI. Čekaj eksplicitno odobrenje pre bilo kakve izmene fajlova.
+- step-by-step  → Završi jednu fazu (istraživanje, plan ili deo implementacije), pa čekaj odobrenje.
+
 ═══════════════════════════════════════════════════
 ZLATNA PRAVILA
 ═══════════════════════════════════════════════════
@@ -89,9 +94,8 @@ Pre nego što počneš da pišeš kod, napravi kratak plan:
 ### Pretpostavke:
 - [ ] Lista product/design odluka koje si napravio sam. Označi sa [PRETPOSTAVKA].
 
-*Napomena za odobrenje*: Ako radiš u autonomnom režimu (AI agent), nastavi sa
-implementacijom odmah nakon kreiranja ovog plana. U suprotnom, čekaj odobrenje
-korisnika pre izmena koda.
+*Odobrenje*: Prati APPROVAL_MODE iznad. U plan-only ili step-by-step režimu stani posle
+plana (ili svake faze) i čekaj eksplicitno odobrenje korisnika pre izmene fajlova.
 
 FAZA 3 - IMPLEMENTACIJA
 ────────────────────────
@@ -207,7 +211,21 @@ Samo admin korisnici smeju da eksportuju.
 
 Stack: Next.js 16, Prisma 7, PostgreSQL, Tailwind 4
 Dozvole: Smeš da menjaš kod.
+Režim odobrenja: plan-only
 Test komande: npm run lint && npm run build && npm run test
+```
+
+---
+
+## Compact Mode
+
+```
+Implementacija feature-a. APPROVAL_MODE: [autonomous|plan-only|step-by-step]. Prvo istraži
+slične obrasce. Plan: fajlovi za kreiranje/izmenu, deps, migracije, [PRETPOSTAVKA]e.
+Implementiraj kompletno: UI, validacija, loading/error/empty states, auth ako treba,
+a11y smoke, testovi. Pokreni lint/build/testove. Izveštaj: šta je dodato, tabela fajlova,
+kako koristiti, verifikacija [NOT RUN], coverage gaps. Koristi postojeće obrasce — bez
+izmišljene arhitekture. Global Safety Rules.
 ```
 
 

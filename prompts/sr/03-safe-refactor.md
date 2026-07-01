@@ -160,4 +160,16 @@ Dozvole: Smeš da menjaš kod i da pokrećeš testove.
 Test komande: npm run lint && npm run build && npm run test
 ```
 
+---
+
+## Compact Mode
+
+```
+Bezbedan bug fix. Koraci: reprodukcija → root cause (fajl/linije/zašto) → minimalan fix
+predlog → implementacija → test koji pada pre fix-a → lint/build/svi testovi. Ne menjaj
+business logiku, API contract ili ne slabi testove. Ako nije bezbedno, samo predlog i čekaj.
+Izveštaj: problem, root cause, tabela fajlova, testovi, verifikacija [NOT RUN], pretpostavke,
+rizici. Global Safety Rules.
+```
+
 
