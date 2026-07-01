@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-label="Universal AI Engineering Prompts workflow">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="320" rx="16" fill="url(#bg)"/>
+  <text x="480" y="42" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Universal AI Engineering Prompts</text>
+  <text x="480" y="68" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="13" text-anchor="middle">Bilingual EN/SR · 8 prompts · Cursor · Copilot · Claude · Windsurf · Aider</text>
+  <g font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="600">
+    <rect x="40" y="100" width="110" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="95" y="127" fill="#e2e8f0" text-anchor="middle">00 Context</text>
+    <rect x="170" y="100" width="110" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="225" y="127" fill="#e2e8f0" text-anchor="middle">01 Scan</text>
+    <rect x="300" y="100" width="110" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="355" y="127" fill="#e2e8f0" text-anchor="middle">02 Audit</text>
+    <rect x="430" y="100" width="110" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="485" y="127" fill="#e2e8f0" text-anchor="middle">03 Refactor</text>
+    <rect x="560" y="100" width="110" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="615" y="127" fill="#e2e8f0" text-anchor="middle">04 Feature</text>
+    <rect x="690" y="100" width="110" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="745" y="127" fill="#e2e8f0" text-anchor="middle">06 Debt</text>
+    <rect x="820" y="100" width="100" height="44" rx="8" fill="#334155" stroke="#64748b"/>
+    <text x="870" y="127" fill="#e2e8f0" text-anchor="middle">07 PR</text>
+    <rect x="365" y="190" width="230" height="52" rx="10" fill="#14532d" stroke="#22c55e"/>
+    <text x="480" y="215" fill="#bbf7d0" text-anchor="middle">05 Deep Scan</text>
+    <text x="480" y="232" fill="#86efac" text-anchor="middle" font-size="11" font-weight="400">QA + Security</text>
+    <rect x="365" y="262" width="230" height="36" rx="8" fill="#1d4ed8" stroke="#60a5fa"/>
+    <text x="480" y="285" fill="#dbeafe" text-anchor="middle" font-size="11">Production Ready</text>
+  </g>
+  <g stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M150 122 H170 M280 122 H300 M410 122 H430 M540 122 H560 M670 122 H690 M800 122 H820"/>
+    <path d="M615 144 V170 H480 V190"/>
+    <path d="M480 242 V262"/>
+  </g>
+</svg>

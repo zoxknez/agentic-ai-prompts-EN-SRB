@@ -4,6 +4,16 @@ Sve značajne promene na projektu **Universal AI Engineering Prompts** biće dok
 
 ---
 
+## [1.2.3] - 2026-07-01
+
+### Dodato
+- **Workflow preview** SVG u README (EN/SR) za bolju vidljivost na GitHub-u.
+
+### Izmenjeno
+- GitHub **description**, **homepage** i dodatni **topics**.
+
+---
+
 ## [1.2.2] - 2026-07-01
 
 ### Dodato

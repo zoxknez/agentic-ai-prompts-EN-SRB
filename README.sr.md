@@ -2,6 +2,8 @@
 
 ![Validate Prompts](https://github.com/zoxknez/agentic-ai-prompts-EN-SRB/actions/workflows/validate-prompts.yml/badge.svg)
 
+![Workflow preview](./docs/assets/workflow-preview.svg)
+
 **Strukturirani, produkcijski promptovi za rad sa AI coding agentima.**
 
 Kolekcija od **8 univerzalnih promptova** koji pokrivaju **ceo životni ciklus razvoja softvera** - od brzog konteksta sesije i prvog mapiranja projekta, kroz reviziju koda, tech debt triage, ispravljanje bagova, dodavanje funkcionalnosti, PR review, pa sve do kompletnog QA i sigurnosnog skeniranja.

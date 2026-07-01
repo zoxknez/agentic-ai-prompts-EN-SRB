@@ -2,6 +2,8 @@
 
 ![Validate Prompts](https://github.com/zoxknez/agentic-ai-prompts-EN-SRB/actions/workflows/validate-prompts.yml/badge.svg)
 
+![Workflow preview](./docs/assets/workflow-preview.svg)
+
 🇷🇸 [Srpski prevod ovde / Serbian translation here](./README.sr.md)
 
 **Structured, production-grade prompts for working with AI coding agents.**

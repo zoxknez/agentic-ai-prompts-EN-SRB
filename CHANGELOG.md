@@ -4,6 +4,16 @@ All notable changes to the **Universal AI Engineering Prompts** project will be 
 
 ---
 
+## [1.2.3] - 2026-07-01
+
+### Added
+- **Workflow preview** SVG in README (EN/SR) for GitHub visual discoverability.
+
+### Changed
+- GitHub repo **description**, **homepage**, and additional **topics** (codex, windsurf, aider, cline, roo-code, security, qa, etc.).
+
+---
+
 ## [1.2.2] - 2026-07-01
 
 ### Added
