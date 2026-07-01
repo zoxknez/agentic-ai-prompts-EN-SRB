@@ -34,3 +34,4 @@ Kada menjaš ili dodaješ nove promptove, drži se sledećih standarda:
 ---
 
 Hvala na trudu i srećno kodiranje! 🚀
+

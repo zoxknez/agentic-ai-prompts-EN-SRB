@@ -1,6 +1,6 @@
-# 🚀 05 — QA & Security Deep Scan
+# 🚀 05 - QA & Security Deep Scan
 
-> **Kada koristiti:** Kada želiš kompletan dubinski test aplikacije — E2E testove, API testove, security audit i verifikaciju svih korisničkih tokova.
+> **Kada koristiti:** Kada želiš kompletan dubinski test aplikacije - E2E testove, API testove, security audit i verifikaciju svih korisničkih tokova.
 > **Cilj:** Pronaći maksimalan broj relevantnih problema u okviru dostupnog koda, alata, vremena i test podataka, uz jasan coverage gap i residual risk.
 
 ---
@@ -44,7 +44,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Ne izmišljaj fajlove, rute, API-je, role, testove, dependency-je ili
   rezultate komandi. Ako nešto ne postoji, napiši [NE POSTOJI].
 - Ne tvrdi da je lint/build/test prošao ako komanda nije stvarno pokrenuta.
-  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] — razlog — preporučena
+  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] - razlog - preporučena
   ručna komanda.
 - Nikada ne ispisuj vrednosti secret-a, tokena, API ključeva ili kredencijala.
   Prikaži samo naziv varijable/fajla i redaktovanu vrednost (npr. sk-****).
@@ -59,7 +59,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 EXECUTION FLOW
 ═══════════════════════════════════════════════════
 
-FAZA 1 — MAPIRANJE APLIKACIJE
+FAZA 1 - MAPIRANJE APLIKACIJE
 ──────────────────────────────
 
 Pre dodavanja BILO KAKVOG testa, mapiraj:
@@ -76,7 +76,7 @@ Pre dodavanja BILO KAKVOG testa, mapiraj:
 Napravi COVERAGE MAPU pre dodavanja novih testova.
 Ovo sprečava pisanje testova za module koji ne postoje.
 
-FAZA 2 — TEST INFRASTRUKTURA
+FAZA 2 - TEST INFRASTRUKTURA
 ─────────────────────────────
 
 Uvedi ili proveri sledeću infrastrukturu:
@@ -96,7 +96,7 @@ OSTALA INFRASTRUKTURA:
 - HTML report generisanje.
 - Artifact metadata za CI integraciju.
 
-FAZA 3 — TESTOVI PO OBLASTIMA
+FAZA 3 - TESTOVI PO OBLASTIMA
 ──────────────────────────────
 
 3.1 UI / E2E TESTOVI
@@ -181,7 +181,7 @@ Mock-ovi moraju pokriti:
 - 💥 Upstream failure (5xx).
 - ⏱️ Timeout / network failure (gde je relevantno).
 
-FAZA 4 — ITERATIVNA VERIFIKACIJA
+FAZA 4 - ITERATIVNA VERIFIKACIJA
 ─────────────────────────────────
 
 Pokrenuti SVE od sledećeg:
@@ -206,7 +206,7 @@ P0/P1 bagove popraviti SAMO ako:
 - Postoje jasni repro koraci koji dokazuju bag.
 
 Ako fix zahteva: dodatne podatke, API ključeve, product odluku ili pristup eksternom
-servisu → zabeležiti kao "NEFIKSIRANO — zahteva [šta tačno]".
+servisu → zabeležiti kao "NEFIKSIRANO - zahteva [šta tačno]".
 
 Posle SVAKOG fix-a ponoviti relevantne testove.
 
@@ -214,7 +214,7 @@ Posle SVAKOG fix-a ponoviti relevantne testove.
 SEVERITY PRAVILA
 ═══════════════════════════════════════════════════
 
-P0 — KRITIČNO
+P0 - KRITIČNO
   - Data leak (osetljivi podaci vidljivi neovlašćenom korisniku).
   - Cross-workspace pristup.
   - Auth bypass.
@@ -222,7 +222,7 @@ P0 — KRITIČNO
   - Kritičan tok bez workaround-a.
   - Gubitak ili pogrešno čuvanje važnih podataka.
 
-P1 — OZBILJNO
+P1 - OZBILJNO
   - Ozbiljan CRUD bag.
   - Permission bag (korisnik vidi/menja nešto što ne bi smeo).
   - Upload/download bag.
@@ -230,12 +230,12 @@ P1 — OZBILJNO
   - Integracioni bag sa eksternim servisom.
   - Ozbiljan API/backend problem sa ograničenim workaround-om.
 
-P2 — SREDNJE
+P2 - SREDNJE
   - Funkcionalni ili UX problem koji usporava rad.
   - Bag koji ima workaround.
   - Problem koji ne ugrožava podatke i ne blokira ključni tok.
 
-P3 — MANJE
+P3 - MANJE
   - Visual polish problem.
   - Copy/tekst problem.
   - Sitna accessibility greška.
@@ -266,7 +266,7 @@ Tabela svih frontend ruta sa statusom testiranosti. Označi nepokriveno sa [COVE
 Tabela svih backend endpoint-a sa statusom testiranosti.
 
 ## 4. Test Map
-Mapa postojećih i novih testova — šta pokrivaju, koji su dodati.
+Mapa postojećih i novih testova - šta pokrivaju, koji su dodati.
 
 ## 5. What Was Tested
 Detaljna lista svih testiranih oblasti i scenarija.
@@ -290,7 +290,7 @@ Nikada ne ispisuj vrednosti secrets-a u tabeli.
 | # | Severity | Oblast | Lokacija | Problem | Expected | Actual | Repro koraci | Artifact | Status |
 |---|----------|--------|----------|---------|----------|--------|-------------|----------|--------|
 | 1 | P0 | Auth | middleware.ts:23 | Nezaštićena ruta | 403 | 200 | GET /admin bez tokena | trace-001.zip | FIXOVAN |
-| 2 | P1 | API | users.ts:45 | Nema validacije | 400 | 500 | POST /api/users body={} | screenshot-002.png | NEFIKSIRANO — zahteva product odluku |
+| 2 | P1 | API | users.ts:45 | Nema validacije | 400 | 500 | POST /api/users body={} | screenshot-002.png | NEFIKSIRANO - zahteva product odluku |
 
 ## 9. Cleanup Status
 - QA_RUN_ID: [vrednost]
@@ -313,7 +313,7 @@ tokom skeniranja (npr. eksterne integracije, 3rd party webhook-ovi, itd.).
 | # | Severity | Problem | Status |
 |---|----------|---------|--------|
 | 1 | P0 | Auth bypass na /admin | ✅ Fixovan, retestiran |
-| 2 | P1 | IDOR na /api/invoices/:id | ❌ Nefiksirano — zahteva product odluku |
+| 2 | P1 | IDOR na /api/invoices/:id | ❌ Nefiksirano - zahteva product odluku |
 
 ## 14. Recommended Next Phase
 Konkretne preporuke šta uraditi dalje (sledeći sprint, pre deploy-a, itd.).
@@ -353,4 +353,5 @@ Dozvole: Smeš da menjaš kod. Smeš da popravljaš P0/P1 bagove.
 Test komande: npm run lint && npm run build && npm run test && npx playwright test
 Report lokacija: reports/deep-scan-2026-07-01.md
 ```
+
 

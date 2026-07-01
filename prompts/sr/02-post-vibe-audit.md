@@ -1,6 +1,6 @@
-# 🛡️ 02 — Post-Vibe Coding Audit
+# 🛡️ 02 - Post-Vibe Coding Audit
 
-> **Kada koristiti:** Posle "vibe codinga" — aplikacija radi na prvi pogled, ali treba ozbiljna provera pre nego što se nastavi razvoj ili deploy.
+> **Kada koristiti:** Posle "vibe codinga" - aplikacija radi na prvi pogled, ali treba ozbiljna provera pre nego što se nastavi razvoj ili deploy.
 > **Cilj:** Sistematična revizija koja razdvaja stvarne bagove od kozmetičkih problema i daje prioritizovanu listu za ispravljanje.
 
 ---
@@ -26,7 +26,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Ne izmišljaj fajlove, rute, API-je, role, testove, dependency-je ili
   rezultate komandi. Ako nešto ne postoji, napiši [NE POSTOJI].
 - Ne tvrdi da je lint/build/test prošao ako komanda nije stvarno pokrenuta.
-  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] — razlog — preporučena
+  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] - razlog - preporučena
   ručna komanda.
 - Nikada ne ispisuj vrednosti secret-a, tokena, API ključeva ili kredencijala.
   Prikaži samo naziv varijable/fajla i redaktovanu vrednost (npr. sk-****).
@@ -36,7 +36,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Svaki coverage gap označi kao [COVERAGE GAP].
 - Ako nešto ne možeš da potvrdiš iz koda, nemoj tvrditi da je potvrđeno.
 
-FAZA 1 — PRE-FLIGHT SUMMARY (obavezna)
+FAZA 1 - PRE-FLIGHT SUMMARY (obavezna)
 ───────────────────────────────────────
 
 Pre detaljne analize napiši kratak sažetak:
@@ -49,11 +49,11 @@ Pre detaljne analize napiši kratak sažetak:
 Ne iznosi dugačko interno razmišljanje. Prikaži samo korisne zaključke,
 pretpostavke i plan provere.
 
-FAZA 2 — VIŠESTRUKA ANALIZA
+FAZA 2 - VIŠESTRUKA ANALIZA
 ────────────────────────────
 
 Analiziraj projekat iz SVIH sledećih uglova. Za svaki ugao navedi konkretne fajlove,
-linije koda i objašnjenja. Ne preskači nijedan ugao — čak i ako nema nalaza, navedi to.
+linije koda i objašnjenja. Ne preskači nijedan ugao - čak i ako nema nalaza, navedi to.
 
 NE IZMIŠLJAJ MODULE, FAJLOVE ILI FUNKCIJE KOJE NE POSTOJE.
 
@@ -168,24 +168,24 @@ NE IZMIŠLJAJ MODULE, FAJLOVE ILI FUNKCIJE KOJE NE POSTOJE.
     - Formati specifični za region (valuta, datum, porez/PDV).
     - Posebna pravila relevantna za ovu konkretnu aplikaciju.
 
-FAZA 3 — PRAVILA KLASIFIKACIJE
+FAZA 3 - PRAVILA KLASIFIKACIJE
 ───────────────────────────────
 
 Klasifikuj SVAKI nalaz prema sledećoj skali:
 
-P0 — KRITIČNO
+P0 - KRITIČNO
   Data leak, auth bypass, gubitak podataka, aplikacija neupotrebljiva.
   → Mora se rešiti ODMAH pre bilo čega drugog.
 
-P1 — OZBILJNO
+P1 - OZBILJNO
   Lomljenje ključnog korisničkog toka, pogrešne dozvole, ozbiljan CRUD/API bug.
   → Mora se rešiti pre deploy-a.
 
-P2 — SREDNJE
+P2 - SREDNJE
   Funkcionalni bug sa workaround-om, UX problem koji smeta svakodnevnom radu.
   → Treba rešiti u sledećem sprintu.
 
-P3 — MANJE
+P3 - MANJE
   Visual polish, copy, sitna accessibility greška, refactor preporuka.
   → Nice-to-have, ali ne blokira.
 
@@ -194,7 +194,7 @@ PRAVILA:
 - Ne predlaži velike rewrite-e ako se problem može rešiti manjom izmenom.
 - Svaki nalaz mora imati: lokaciju u kodu, objašnjenje, rizik nivo, predlog rešenja.
 
-FAZA 4 — FINALNI IZVEŠTAJ
+FAZA 4 - FINALNI IZVEŠTAJ
 ──────────────────────────
 
 Napravi strukturiran izveštaj sa SVIM sledećim sekcijama:
@@ -223,7 +223,7 @@ Nedostajući state-ovi, keyboard navigacija, kontrast, labele.
 ## 8. Testing Gaps
 Šta je pokriveno, šta fali, gde su lažni testovi. Označi [COVERAGE GAP].
 
-## 9. P0–P3 Findings Table
+## 9. P0-P3 Findings Table
 
 | # | Severity | Oblast | Fajl / Lokacija | Problem | Rizik | Predlog |
 |---|----------|--------|-----------------|---------|-------|---------|
@@ -258,6 +258,7 @@ Ovaj prompt je SAMO za analizu i izveštaj.
 Stack: Next.js 16, Prisma 7, PostgreSQL, Tailwind 4
 Kontekst: Aplikacija je nastala kroz 2 nedelje brzog kodiranja. Radi na lokalu,
 ali nisam siguran da li je bezbedna i stabilna za produkciju.
-Dozvole: Samo analiza — ne menjaj ništa.
+Dozvole: Samo analiza - ne menjaj ništa.
 ```
+
 

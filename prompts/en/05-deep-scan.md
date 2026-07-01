@@ -1,6 +1,6 @@
-# 🚀 05 — QA & Security Deep Scan
+# 🚀 05 - QA & Security Deep Scan
 
-> **When to use:** When you want a complete end-to-end audit of the application — including E2E tests, API tests, security scans, and validation of all user flows.
+> **When to use:** When you want a complete end-to-end audit of the application - including E2E tests, API tests, security scans, and validation of all user flows.
 > **Goal:** Find the maximum number of relevant issues within the limits of the code, tools, time, and test data available, while documenting clear coverage gaps and residual risks.
 
 ---
@@ -45,7 +45,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Do not invent files, routes, APIs, roles, tests, dependencies, or command
   results. If something does not exist, write [DOES NOT EXIST].
 - Do not claim that a lint/build/test run has passed if the command was not
-  actually executed. If you cannot run a command, write: [NOT RUN] — reason —
+  actually executed. If you cannot run a command, write: [NOT RUN] - reason -
   recommended manual command.
 - Never print values of secrets, tokens, API keys, or credentials. Print only
   the variable/file name and a redacted value (e.g., sk-****).
@@ -60,7 +60,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 EXECUTION FLOW
 ═══════════════════════════════════════════════════
 
-PHASE 1 — APPLICATION MAPPING
+PHASE 1 - APPLICATION MAPPING
 ──────────────────────────────
 
 Before adding ANY test, map:
@@ -77,7 +77,7 @@ Before adding ANY test, map:
 Generate a COVERAGE MAP before adding new tests.
 This prevents writing tests for modules that do not exist.
 
-PHASE 2 — TEST INFRASTRUCTURE
+PHASE 2 - TEST INFRASTRUCTURE
 ─────────────────────────────
 
 Introduce or verify the following infrastructure:
@@ -97,7 +97,7 @@ OTHER INFRASTRUCTURE:
 - HTML report generation.
 - Artifact metadata for CI integration.
 
-PHASE 3 — TESTING BY AREA
+PHASE 3 - TESTING BY AREA
 ──────────────────────────────
 
 3.1 UI / E2E TESTS
@@ -182,7 +182,7 @@ Mocks must cover:
 - 💥 Upstream failures (5xx).
 - ⏱️ Timeouts / network failures (where applicable).
 
-PHASE 4 — ITERATIVE VERIFICATION
+PHASE 4 - ITERATIVE VERIFICATION
 ─────────────────────────────────
 
 Run ALL of the following:
@@ -207,7 +207,7 @@ Fix P0/P1 bugs ONLY if:
 - Clear reproduction steps prove the bug.
 
 If the fix requires: additional data, API keys, product decisions, or access to
-external services → record it as "UNFIXED — requires [what exactly]".
+external services → record it as "UNFIXED - requires [what exactly]".
 
 Repeat the relevant tests after EVERY fix.
 
@@ -215,7 +215,7 @@ Repeat the relevant tests after EVERY fix.
 SEVERITY RULES
 ═══════════════════════════════════════════════════
 
-P0 — CRITICAL
+P0 - CRITICAL
   - Data leaks (sensitive data exposed to unauthorized users).
   - Cross-workspace access.
   - Auth bypasses.
@@ -223,7 +223,7 @@ P0 — CRITICAL
   - Critical flows broken without a workaround.
   - Loss or incorrect storage of critical data.
 
-P1 — HIGH
+P1 - HIGH
   - Severe CRUD bugs.
   - Permission bugs (users seeing/modifying things they shouldn't).
   - Upload/download bugs.
@@ -231,12 +231,12 @@ P1 — HIGH
   - Integration bugs with external services.
   - Severe API/backend issues with limited workarounds.
 
-P2 — MEDIUM
+P2 - MEDIUM
   - Functional or UX issues that slow down usage.
   - Bugs with an available workaround.
   - Issues that do not endanger data or block critical flows.
 
-P3 — LOW
+P3 - LOW
   - Visual polish issues.
   - Copy/text errors.
   - Minor accessibility warnings.
@@ -267,7 +267,7 @@ A table of all frontend routes and their test status. Mark untested routes as [C
 A table of all backend endpoints and their test status.
 
 ## 4. Test Map
-A map of existing and new tests — what they cover, what was added.
+A map of existing and new tests - what they cover, what was added.
 
 ## 5. What Was Tested
 A detailed list of tested areas and scenarios.
@@ -314,7 +314,7 @@ during the scan (e.g., external integrations, 3rd party webhooks, etc.).
 | # | Severity | Issue | Status |
 |---|----------|-------|--------|
 | 1 | P0 | Auth bypass on /admin | ✅ Fixed, re-tested |
-| 2 | P1 | IDOR on /api/invoices/:id | ❌ Unfixed — requires product decision |
+| 2 | P1 | IDOR on /api/invoices/:id | ❌ Unfixed - requires product decision |
 
 ## 14. Recommended Next Phase
 Concrete recommendations for the next steps (next sprint, before deploy, etc.).
@@ -354,4 +354,5 @@ Permissions: Allowed to modify code. Allowed to fix P0/P1 bugs.
 Test commands: npm run lint && npm run build && npm run test && npx playwright test
 Report location: reports/deep-scan-2026-07-01.md
 ```
+
 

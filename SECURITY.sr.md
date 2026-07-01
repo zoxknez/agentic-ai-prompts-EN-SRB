@@ -15,7 +15,7 @@ Aktivno održavamo i ažuriramo ove promptove za savremene AI coding agente i LL
 Ako pronađeš bezbednosni propust (npr. situaciju u kojoj prompt dozvoljava AI agentu da ispiše privatne kredencijale, ignoriše prompt-injection zaštitu ili izvrši destruktivne komande bez odobrenja):
 
 1. **Nemoj otvarati javni Issue.**
-2. Pošalji detaljan opis problema na e-mail ili otvori privatni security advisory na GitHub-u (ako je opcija omogućena).
+2. Otvori privatni security advisory na GitHub-u ako je ta opcija omogućena. Ako privatni advisories nisu dostupni, kontaktiraj održavaoca preko profila.
 3. Navedi:
    - Koji prompt je korišćen.
    - Koji AI alat i model su korišćeni.
@@ -23,3 +23,4 @@ Ako pronađeš bezbednosni propust (npr. situaciju u kojoj prompt dozvoljava AI 
    - Predlog popravke.
 
 Odgovorićemo u najkraćem mogućem roku i objaviti ispravku u novoj verziji. Hvala ti što nam pomažeš da očuvamo bezbednost zajednice!
+

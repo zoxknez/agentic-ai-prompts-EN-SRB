@@ -1,6 +1,6 @@
-# ✨ 04 — Feature Implementation
+# ✨ 04 - Feature Implementation
 
-> **When to use:** When you want the AI to add a new feature in a controlled manner — reusing existing patterns in the code, without introducing unnecessary complexity.
+> **When to use:** When you want the AI to add a new feature in a controlled manner - reusing existing patterns in the code, without introducing unnecessary complexity.
 > **Goal:** A complete yet minimal implementation that blends seamlessly into the existing architecture.
 
 ---
@@ -45,7 +45,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Do not invent files, routes, APIs, roles, tests, dependencies, or command
   results. If something does not exist, write [DOES NOT EXIST].
 - Do not claim that a lint/build/test run has passed if the command was not
-  actually executed. If you cannot run a command, write: [NOT RUN] — reason —
+  actually executed. If you cannot run a command, write: [NOT RUN] - reason -
   recommended manual command.
 - Never print values of secrets, tokens, API keys, or credentials. Print only
   the variable/file name and a redacted value (e.g., sk-****).
@@ -60,7 +60,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 MANDATORY PROCESS
 ═══════════════════════════════════════════════════
 
-PHASE 1 — RESEARCH
+PHASE 1 - RESEARCH
 ──────────────────────
 - Map the relevant files and modules.
 - Find similar existing features and trace their patterns:
@@ -72,7 +72,7 @@ PHASE 1 — RESEARCH
   • How is error handling structured?
 - List the specific files you plan to modify or create.
 
-PHASE 2 — IMPLEMENTATION PLAN
+PHASE 2 - IMPLEMENTATION PLAN
 ─────────────────────────────
 Before writing any code, draft a short plan:
 
@@ -94,7 +94,7 @@ Before writing any code, draft a short plan:
 the implementation immediately after creating this plan. Otherwise, stop and wait
 for user approval before modifying files.
 
-PHASE 3 — IMPLEMENTATION
+PHASE 3 - IMPLEMENTATION
 ────────────────────────
 Implement a minimal yet COMPLETE solution. Each of the following must be covered
 (if relevant to the feature):
@@ -136,13 +136,13 @@ Accessibility (A11y) Smoke:
 - Keyboard navigation possible.
 - Focus management in modals or drawers.
 
-PHASE 4 — TESTS
+PHASE 4 - TESTS
 ─────────────────
 - Add tests for the new feature.
 - Use the same testing framework and style as the rest of the project.
 - Cover: happy path, validation failures, error handling, permission guards (if applicable).
 
-PHASE 5 — VERIFICATION
+PHASE 5 - VERIFICATION
 ──────────────────────
 Run:
 - lint
@@ -152,7 +152,7 @@ Run:
 
 Confirm that there are no regressions.
 
-PHASE 6 — FINAL REPORT
+PHASE 6 - FINAL REPORT
 ──────────────────────────
 
 ## What Was Added
@@ -190,7 +190,7 @@ What could be added/improved in subsequent iterations.
 
 ═══════════════════════════════════════════════════
 DO NOT SKIP RESEARCH. DO NOT INVENT PATTERNS.
-Use what the project already has — remain consistent.
+Use what the project already has - remain consistent.
 ═══════════════════════════════════════════════════
 ```
 
@@ -210,4 +210,5 @@ Stack: Next.js 16, Prisma 7, PostgreSQL, Tailwind 4
 Permissions: Allowed to modify code.
 Test commands: npm run lint && npm run build && npm run test
 ```
+
 

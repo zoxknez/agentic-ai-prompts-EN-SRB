@@ -34,3 +34,4 @@ When editing or adding new prompts, please adhere to these standards:
 ---
 
 Thank you for your help, and happy coding! 🚀
+

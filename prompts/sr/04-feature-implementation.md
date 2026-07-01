@@ -1,6 +1,6 @@
-# ✨ 04 — Feature Implementation
+# ✨ 04 - Feature Implementation
 
-> **Kada koristiti:** Kada želiš da AI doda novu funkcionalnost kontrolisano — koristeći postojeće obrasce u kodu, bez uvođenja nepotrebne kompleksnosti.
+> **Kada koristiti:** Kada želiš da AI doda novu funkcionalnost kontrolisano - koristeći postojeće obrasce u kodu, bez uvođenja nepotrebne kompleksnosti.
 > **Cilj:** Kompletna, ali minimalna implementacija koja se uklapa u postojeću arhitekturu.
 
 ---
@@ -44,7 +44,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Ne izmišljaj fajlove, rute, API-je, role, testove, dependency-je ili
   rezultate komandi. Ako nešto ne postoji, napiši [NE POSTOJI].
 - Ne tvrdi da je lint/build/test prošao ako komanda nije stvarno pokrenuta.
-  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] — razlog — preporučena
+  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] - razlog - preporučena
   ručna komanda.
 - Nikada ne ispisuj vrednosti secret-a, tokena, API ključeva ili kredencijala.
   Prikaži samo naziv varijable/fajla i redaktovanu vrednost (npr. sk-****).
@@ -59,7 +59,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 OBAVEZAN PROCES
 ═══════════════════════════════════════════════════
 
-FAZA 1 — ISTRAŽIVANJE
+FAZA 1 - ISTRAŽIVANJE
 ──────────────────────
 - Mapiraj relevantne fajlove i module.
 - Pronađi postojeće slične feature-e i njihove obrasce:
@@ -71,7 +71,7 @@ FAZA 1 — ISTRAŽIVANJE
   • Kako se radi error handling?
 - Navedi konkretne fajlove koje planiraš da menjaš ili kreiraš.
 
-FAZA 2 — IMPLEMENTATION PLAN
+FAZA 2 - IMPLEMENTATION PLAN
 ─────────────────────────────
 Pre nego što počneš da pišeš kod, napravi kratak plan:
 
@@ -93,7 +93,7 @@ Pre nego što počneš da pišeš kod, napravi kratak plan:
 implementacijom odmah nakon kreiranja ovog plana. U suprotnom, čekaj odobrenje
 korisnika pre izmena koda.
 
-FAZA 3 — IMPLEMENTACIJA
+FAZA 3 - IMPLEMENTACIJA
 ────────────────────────
 Implementiraj minimalno ali KOMPLETNO rešenje. Svaka od sledećih stavki mora biti
 pokrivena (ako je relevantna za ovaj feature):
@@ -135,13 +135,13 @@ Accessibility smoke:
 - Keyboard navigacija moguća.
 - Fokus management ako postoji modal ili drawer.
 
-FAZA 4 — TESTOVI
+FAZA 4 - TESTOVI
 ─────────────────
 - Dodaj testove za novi feature.
 - Koristi isti test framework i stil kao u ostatku projekta.
 - Pokrij: happy path, validaciju, error case, permission case (ako postoji).
 
-FAZA 5 — VERIFIKACIJA
+FAZA 5 - VERIFIKACIJA
 ──────────────────────
 Pokreni:
 - lint
@@ -151,7 +151,7 @@ Pokreni:
 
 Potvrdi da nema regresije.
 
-FAZA 6 — FINALNI IZVEŠTAJ
+FAZA 6 - FINALNI IZVEŠTAJ
 ──────────────────────────
 
 ## What Was Added
@@ -189,7 +189,7 @@ Lista pretpostavki obeleženih sa [PRETPOSTAVKA] i objašnjenje.
 
 ═══════════════════════════════════════════════════
 NE PRESKAČI ISTRAŽIVANJE. NE IZMIŠLJAJ OBRASCE.
-Koristi ono što projekat već ima — budi konzistentan.
+Koristi ono što projekat već ima - budi konzistentan.
 ═══════════════════════════════════════════════════
 ```
 
@@ -209,4 +209,5 @@ Stack: Next.js 16, Prisma 7, PostgreSQL, Tailwind 4
 Dozvole: Smeš da menjaš kod.
 Test komande: npm run lint && npm run build && npm run test
 ```
+
 

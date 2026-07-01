@@ -2,7 +2,7 @@
 
 **Strukturirani, produkcijski promptovi za rad sa AI coding agentima.**
 
-Kolekcija od 5 univerzalnih promptova koji pokrivaju **ceo životni ciklus razvoja softvera** — od prvog mapiranja projekta, kroz reviziju koda, ispravljanje bagova, dodavanje funkcionalnosti, pa sve do kompletnog QA i sigurnosnog skeniranja.
+Kolekcija od 5 univerzalnih promptova koji pokrivaju **ceo životni ciklus razvoja softvera** - od prvog mapiranja projekta, kroz reviziju koda, ispravljanje bagova, dodavanje funkcionalnosti, pa sve do kompletnog QA i sigurnosnog skeniranja.
 
 Dizajnirani su za rad sa: **Cursor**, **Windsurf**, **Claude (Code, Projects, API)**, **Copilot Agent**, **ChatGPT / Codex**, **Gemini** i sličnim alatima.
 
@@ -45,7 +45,7 @@ GLOBAL AGENT SAFETY RULES
 
 3. NE LAŽIRAJ REZULTATE.
    Ne tvrdi da je lint/build/test prošao ako komanda nije stvarno pokrenuta.
-   Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] — razlog — preporučena
+   Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] - razlog - preporučena
    ručna komanda.
 
 4. ČUVAJ SECRETS.
@@ -94,7 +94,7 @@ graph TD
     G -->|"✅ Sve zeleno"| H["🚀 Production Ready"]
 ```
 
-> **Svaki prompt se može koristiti i nezavisno** — ne moraš da pratiš ceo ciklus.
+> **Svaki prompt se može koristiti i nezavisno** - ne moraš da pratiš ceo ciklus.
 
 ---
 
@@ -103,7 +103,7 @@ graph TD
 | # | Prompt | Kada koristiti | Glavni output |
 |:--|:-------|:--------------|:-------------|
 | 01 | [🔍 Architecture Scan](./prompts/sr/01-architecture-scan.md) | Prvo upoznavanje sa projektom | Arhitektonska mapa, rute, modeli, rizici |
-| 02 | [🛡️ Post-Vibe Audit](./prompts/sr/02-post-vibe-audit.md) | Posle brzog kodiranja — ozbiljna provera | P0–P3 tabela nalaza, sigurnost, UX |
+| 02 | [🛡️ Post-Vibe Audit](./prompts/sr/02-post-vibe-audit.md) | Posle brzog kodiranja - ozbiljna provera | P0-P3 tabela nalaza, sigurnost, UX |
 | 03 | [🩹 Safe Refactor](./prompts/sr/03-safe-refactor.md) | Ispravljanje bagova bez lomljenja | Root cause, minimalan patch, test verifikacija |
 | 04 | [✨ Feature Implementation](./prompts/sr/04-feature-implementation.md) | Kontrolisano dodavanje novog | Plan, implementacija po uzorima, testovi |
 | 05 | [🚀 Deep Scan](./prompts/sr/05-deep-scan.md) | Kompletan QA + security audit | E2E/API testovi, deep-scan report |
@@ -113,7 +113,7 @@ graph TD
 ## 🚀 Quick Start
 
 ```
-1. Izaberi prompt prema zadatku (01–05).
+1. Izaberi prompt prema zadatku (01-05).
 2. Nalepi ga u AI coding agenta (Cursor, Claude, Copilot, ChatGPT...).
 3. Dodaj kontekst: stack, URL, test nalog, dozvole, test komande.
 4. Zahtevaj finalni report.
@@ -127,8 +127,8 @@ graph TD
 ### Cursor
 
 Dve opcije:
-1. **`.cursorrules`** — Kopiraj sadržaj željenog prompta u `.cursorrules` fajl u korenu projekta.
-2. **`@` reference** — U Cursor chatu koristi `@prompts/sr/01-architecture-scan.md` da učitaš prompt kao kontekst.
+1. **`.cursorrules`** - Kopiraj sadržaj željenog prompta u `.cursorrules` fajl u korenu projekta.
+2. **`@` reference** - U Cursor chatu koristi `@prompts/sr/01-architecture-scan.md` da učitaš prompt kao kontekst.
 
 ### Windsurf
 
@@ -151,9 +151,12 @@ Kreiraj `.windsurfrules` fajl u korenu projekta i referenciraj željeni prompt, 
 
 Nalepi željeni prompt kao prvi unos u konverzaciji. Svi promptovi su napisani u univerzalnom formatu koji radi sa bilo kojim LLM-om.
 
+> [!NOTE]
+> Nazivi specifičnih konfiguracionih fajlova za alate se mogu promeniti tokom vremena. Ako vaš alat podržava novija pravila projekta, memoriju ili prilagođene instrukcije, nalepite izabrani prompt tamo.
+
 ---
 
-## 💡 Maksimalni rezultat — šta uvek dodati
+## 💡 Maksimalni rezultat - šta uvek dodati
 
 Kada startuješ AI agenta sa bilo kojim od ovih promptova, **uvek dodaj ove informacije** na početku:
 
@@ -172,7 +175,7 @@ Report lokacija: [npr. reports/ folder]
 ## 🏗️ Struktura repozitorijuma
 
 ```
-univerzalniprompt/
+agentic-ai-prompts-EN-SRB/
 ├── README.md                              ← Engleski README (glavni)
 ├── README.sr.md                           ← Ovaj fajl (srpski)
 ├── .editorconfig                          ← Pravila za encoding i line endings
@@ -198,8 +201,9 @@ univerzalniprompt/
 
 ## 📝 Licenca
 
-MIT — slobodno koristi, modifikuj i deli. Pogledaj [LICENSE](./LICENSE) za detalje.
+MIT - slobodno koristi, modifikuj i deli. Pogledaj [LICENSE](./LICENSE) za detalje.
 
 Ako ti promptovi pomognu u radu, ostavi ⭐ na repozitorijumu!
 
 ---
+

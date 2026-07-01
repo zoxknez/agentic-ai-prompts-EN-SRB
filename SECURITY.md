@@ -15,7 +15,7 @@ We maintain these prompts for current-generation AI coding agents and LLM-based 
 If you find a security vulnerability (such as a scenario where a prompt fails to protect secrets, ignores prompt-injection defenses, or executes destructive file system commands without permission):
 
 1. **Do NOT open a public Issue.**
-2. Send a detailed description of the issue to our security email or open a private security advisory on GitHub (if available).
+2. Open a private security advisory on GitHub if available. If private advisories are not available, please contact the maintainer through the profile links.
 3. Please include:
    - The prompt used.
    - The AI tool and LLM model used.
@@ -23,3 +23,4 @@ If you find a security vulnerability (such as a scenario where a prompt fails to
    - A proposed fix.
 
 We will review your report as quickly as possible and publish a fix in a new version. Thank you for helping us keep the community safe!
+

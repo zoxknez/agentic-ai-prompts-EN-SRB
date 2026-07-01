@@ -1,4 +1,4 @@
-# 🔍 01 — Project Mapping & Architecture Scan
+# 🔍 01 - Project Mapping & Architecture Scan
 
 > **When to use:** When you are introducing an AI agent to a repository, module, or application for the first time.
 > **Goal:** Deep understanding of the code BEFORE making any modifications.
@@ -26,7 +26,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Do not invent files, routes, APIs, roles, tests, dependencies, or command
   results. If something does not exist, write [DOES NOT EXIST].
 - Do not claim that a lint/build/test run has passed if the command was not
-  actually executed. If you cannot run a command, write: [NOT RUN] — reason —
+  actually executed. If you cannot run a command, write: [NOT RUN] - reason -
   recommended manual command.
 - Never print values of secrets, tokens, API keys, or credentials. Print only
   the variable/file name and a redacted value (e.g., sk-****).
@@ -35,7 +35,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Mark every assumption as [ASSUMPTION].
 - If you cannot confirm something from the code, do not claim it is confirmed.
 
-PHASE 1 — PRE-FLIGHT SUMMARY (Mandatory)
+PHASE 1 - PRE-FLIGHT SUMMARY (Mandatory)
 ───────────────────────────────────────
 
 Before starting the detailed analysis, write a brief summary:
@@ -47,7 +47,7 @@ Before starting the detailed analysis, write a brief summary:
 Do not output long internal chain-of-thought. Present only useful conclusions,
 assumptions, and your verification plan.
 
-PHASE 2 — MAPPING
+PHASE 2 - MAPPING
 ───────────────────
 
 Map the following areas. For each area, list specific files and paths.
@@ -138,7 +138,7 @@ DO NOT INVENT FUNCTIONS, MODULES, OR FILES THAT DO NOT EXIST.
     - Technical debt.
     - Code style inconsistencies.
 
-PHASE 3 — FINAL REPORT
+PHASE 3 - FINAL REPORT
 ──────────────────────────
 
 Generate a structured report containing the following sections:
@@ -195,4 +195,5 @@ Stack: Next.js 16 App Router, Prisma 7, PostgreSQL, Auth.js v5, Tailwind 4
 URL: http://localhost:3000
 Permissions: Analysis only, do not change any code.
 ```
+
 

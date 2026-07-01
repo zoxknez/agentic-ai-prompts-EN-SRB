@@ -25,3 +25,4 @@ Sve značajne promene na projektu **Universal AI Engineering Prompts** biće dok
 ## [1.0.0] - 2026-07-01
 - Inicijalna verzija 5 univerzalnih promptova (Architecture Scan, Post-Vibe Audit, Safe Refactor, Feature Implementation, Deep Scan).
 
+

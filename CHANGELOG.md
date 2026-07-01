@@ -26,3 +26,4 @@ All notable changes to the **Universal AI Engineering Prompts** project will be 
 ## [1.0.0] - 2026-07-01
 - Initial release of 5 core prompts (Architecture Scan, Post-Vibe Audit, Safe Refactor, Feature Implementation, Deep Scan) in Serbian.
 
+

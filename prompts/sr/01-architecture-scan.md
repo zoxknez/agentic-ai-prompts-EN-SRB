@@ -1,4 +1,4 @@
-# 🔍 01 — Project Mapping & Architecture Scan
+# 🔍 01 - Project Mapping & Architecture Scan
 
 > **Kada koristiti:** Kada prvi put daješ AI agentu repozitorijum, modul ili aplikaciju.
 > **Cilj:** Duboko razumevanje koda PRE bilo kakvih izmena.
@@ -25,7 +25,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Ne izmišljaj fajlove, rute, API-je, role, testove, dependency-je ili
   rezultate komandi. Ako nešto ne postoji, napiši [NE POSTOJI].
 - Ne tvrdi da je lint/build/test prošao ako komanda nije stvarno pokrenuta.
-  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] — razlog — preporučena
+  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] - razlog - preporučena
   ručna komanda.
 - Nikada ne ispisuj vrednosti secret-a, tokena, API ključeva ili kredencijala.
   Prikaži samo naziv varijable/fajla i redaktovanu vrednost (npr. sk-****).
@@ -34,7 +34,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Svaku pretpostavku označi kao [PRETPOSTAVKA].
 - Ako nešto ne možeš da potvrdiš iz koda, nemoj tvrditi da je potvrđeno.
 
-FAZA 1 — PRE-FLIGHT SUMMARY (obavezna)
+FAZA 1 - PRE-FLIGHT SUMMARY (obavezna)
 ───────────────────────────────────────
 
 Pre detaljne analize napiši kratak sažetak:
@@ -46,7 +46,7 @@ Pre detaljne analize napiši kratak sažetak:
 Ne iznosi dugačko interno razmišljanje. Prikaži samo korisne zaključke,
 pretpostavke i plan provere.
 
-FAZA 2 — MAPIRANJE
+FAZA 2 - MAPIRANJE
 ───────────────────
 
 Mapiraj sledeće oblasti. Za svaku oblast navedi konkretne fajlove i putanje.
@@ -137,7 +137,7 @@ NE IZMIŠLJAJ FUNKCIJE, MODULE ILI FAJLOVE KOJI NE POSTOJE.
     - Tehnički dug.
     - Nekonzistentnosti u stilu kodiranja.
 
-FAZA 3 — FINALNI IZVEŠTAJ
+FAZA 3 - FINALNI IZVEŠTAJ
 ──────────────────────────
 
 Napravi strukturiran izveštaj sa sledećim sekcijama:
@@ -194,4 +194,6 @@ Stack: Next.js 16 App Router, Prisma 7, PostgreSQL, Auth.js v5, Tailwind 4
 URL: http://localhost:3000
 Dozvole: Samo analiza, ne menjaj kod.
 ```
+
+
 

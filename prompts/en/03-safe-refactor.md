@@ -1,7 +1,7 @@
-# 🩹 03 — Safe Refactor & Bug Fix
+# 🩹 03 - Safe Refactor & Bug Fix
 
 > **When to use:** When you want the AI to fix a proven bug or perform a safe refactor WITHOUT breaking the existing application.
-> **Goal:** Minimal, targeted changes with full verification — zero side effects.
+> **Goal:** Minimal, targeted changes with full verification - zero side effects.
 
 ---
 
@@ -18,7 +18,7 @@ GOLDEN RULES
 
 1. UNDERSTAND BEFORE YOU CHANGE
    - Read the relevant code and fully understand the existing behavior.
-   - Understand why the code is written the way it is — there might be a historical reason.
+   - Understand why the code is written the way it is - there might be a historical reason.
 
 2. MINIMAL INTERVENTION
    - Do not do a major rewrite if a small patch solves the problem.
@@ -44,7 +44,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Do not invent files, routes, APIs, roles, tests, dependencies, or command
   results. If something does not exist, write [DOES NOT EXIST].
 - Do not claim that a lint/build/test run has passed if the command was not
-  actually executed. If you cannot run a command, write: [NOT RUN] — reason —
+  actually executed. If you cannot run a command, write: [NOT RUN] - reason -
   recommended manual command.
 - Never print values of secrets, tokens, API keys, or credentials. Print only
   the variable/file name and a redacted value (e.g., sk-****).
@@ -58,40 +58,40 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 MANDATORY PROCESS (Do not skip any steps)
 ═══════════════════════════════════════════════════
 
-STEP 1 — REPRODUCTION
+STEP 1 - REPRODUCTION
 ───────────────────────
 - Describe the bug or issue to be solved.
 - List the steps to reproduce it (or explain why it cannot be reproduced directly).
 - Document expected vs actual behavior.
 - If the bug was reported by a user, quote their description.
 
-STEP 2 — ROOT CAUSE ANALYSIS
+STEP 2 - ROOT CAUSE ANALYSIS
 ─────────────────────────────
 - Identify the exact file, function, and line range where the issue originates.
 - Explain WHY the bug happens (not just WHERE).
 - Check if the same issue exists in other parts of the codebase.
 - Check if fixing this bug might cause regression elsewhere.
 
-STEP 3 — PROPOSED FIX
+STEP 3 - PROPOSED FIX
 ────────────────────────
 - Propose a minimal fix.
 - Explain what changes and why.
 - Explicitly list what does NOT change.
 - If there are multiple ways to fix it, list options along with trade-offs.
 
-STEP 4 — IMPLEMENTATION
+STEP 4 - IMPLEMENTATION
 ─────────────────────────
 - Implement the fix.
 - Adhere strictly to the existing coding style of the project.
 - Do not introduce new dependencies unless absolutely necessary.
 
-STEP 5 — TESTING
+STEP 5 - TESTING
 ─────────────────────
 - Add or update a test that specifically covers this bug.
 - The test must FAIL before the fix and PASS after the fix.
 - Ensure all existing tests continue to pass.
 
-STEP 6 — VERIFICATION
+STEP 6 - VERIFICATION
 ───────────────────────
 Run ALL of the following (skip only if the command does not exist in the project):
 - lint (npm run lint / eslint / ruff...)
@@ -100,7 +100,7 @@ Run ALL of the following (skip only if the command does not exist in the project
 - new/targeted tests
 - check that there are no regressions in related user flows
 
-STEP 7 — FINAL REPORT
+STEP 7 - FINAL REPORT
 ───────────────────────────
 
 Generate a report containing the following sections:
@@ -159,4 +159,5 @@ Stack: Next.js 16, Auth.js v5, Prisma 7
 Permissions: Allowed to modify code and run tests.
 Test commands: npm run lint && npm run build && npm run test
 ```
+
 

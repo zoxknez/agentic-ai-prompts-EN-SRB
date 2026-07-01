@@ -1,6 +1,6 @@
-# 🛡️ 02 — Post-Vibe Coding Audit
+# 🛡️ 02 - Post-Vibe Coding Audit
 
-> **When to use:** After "vibe coding" — when the application works at first glance but needs a thorough audit before continuing development or deploying to production.
+> **When to use:** After "vibe coding" - when the application works at first glance but needs a thorough audit before continuing development or deploying to production.
 > **Goal:** A systematic review that separates actual bugs from cosmetic issues and provides a prioritized list of fixes.
 
 ---
@@ -27,7 +27,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Do not invent files, routes, APIs, roles, tests, dependencies, or command
   results. If something does not exist, write [DOES NOT EXIST].
 - Do not claim that a lint/build/test run has passed if the command was not
-  actually executed. If you cannot run a command, write: [NOT RUN] — reason —
+  actually executed. If you cannot run a command, write: [NOT RUN] - reason -
   recommended manual command.
 - Never print values of secrets, tokens, API keys, or credentials. Print only
   the variable/file name and a redacted value (e.g., sk-****).
@@ -37,7 +37,7 @@ GLOBAL AGENT SAFETY RULES (Apply to the entire session)
 - Mark every coverage gap as [COVERAGE GAP].
 - If you cannot confirm something from the code, do not claim it is confirmed.
 
-PHASE 1 — PRE-FLIGHT SUMMARY (Mandatory)
+PHASE 1 - PRE-FLIGHT SUMMARY (Mandatory)
 ───────────────────────────────────────
 
 Before starting the detailed audit, write a brief summary:
@@ -50,11 +50,11 @@ Before starting the detailed audit, write a brief summary:
 Do not output long internal chain-of-thought. Present only useful conclusions,
 assumptions, and your verification plan.
 
-PHASE 2 — MULTI-ANGLE ANALYSIS
+PHASE 2 - MULTI-ANGLE ANALYSIS
 ────────────────────────────
 
 Analyze the project from ALL of the following angles. For each angle, cite specific
-files, line ranges, and explanations. Do not skip any angle — if there are no findings,
+files, line ranges, and explanations. Do not skip any angle - if there are no findings,
 explicitly state that.
 
 DO NOT INVENT MODULES, FILES, OR FUNCTIONS THAT DO NOT EXIST.
@@ -170,24 +170,24 @@ DO NOT INVENT MODULES, FILES, OR FUNCTIONS THAT DO NOT EXIST.
     - Region-specific formats (currency, dates, taxes/VAT).
     - Custom business rules relevant to this specific application.
 
-PHASE 3 — CLASSIFICATION RULES
+PHASE 3 - CLASSIFICATION RULES
 ───────────────────────────────
 
 Classify EVERY finding according to the following severity scale:
 
-P0 — CRITICAL
+P0 - CRITICAL
   Data leak, auth bypass, data loss, application completely broken.
   → Must be resolved IMMEDIATELY before doing anything else.
 
-P1 — HIGH
+P1 - HIGH
   Breaks a critical user flow, incorrect permissions, severe CRUD/API bug.
   → Must be resolved before deploy.
 
-P2 — MEDIUM
+P2 - MEDIUM
   Functional bug with a workaround, UX issues that hinder daily usage.
   → Should be resolved in the next sprint.
 
-P3 — LOW
+P3 - LOW
   Visual polish, copy/text issue, minor accessibility warning, refactor recommendation.
   → Nice-to-have, does not block usability.
 
@@ -196,7 +196,7 @@ RULES:
 - Do not propose major rewrites if a small fix can solve the issue.
 - Each finding must include: code location, description, risk level, proposed solution.
 
-PHASE 4 — FINAL REPORT
+PHASE 4 - FINAL REPORT
 ──────────────────────────
 
 Generate a structured report containing the following sections:
@@ -225,7 +225,7 @@ Missing states, keyboard navigation, contrast, labels.
 ## 8. Testing Gaps
 What is covered, what is missing. Mark [COVERAGE GAP].
 
-## 9. P0–P3 Findings Table
+## 9. P0-P3 Findings Table
 
 | # | Severity | Category | File / Location | Issue | Risk | Proposed Fix |
 |---|----------|----------|-----------------|-------|------|--------------|
@@ -257,6 +257,7 @@ This prompt is ONLY for analysis and reporting.
 Stack: Next.js 16, Prisma 7, PostgreSQL, Tailwind 4
 Context: The application was built over 2 weeks of fast coding. It runs locally,
 but I'm not sure if it is secure and stable for production.
-Permissions: Analysis only — do not modify anything.
+Permissions: Analysis only - do not modify anything.
 ```
+
 

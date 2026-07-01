@@ -1,7 +1,7 @@
-# 🩹 03 — Safe Refactor & Bug Fix
+# 🩹 03 - Safe Refactor & Bug Fix
 
 > **Kada koristiti:** Kada želiš da AI popravi dokazani bag ili uradi bezbedan refaktor BEZ lomljenja postojeće aplikacije.
-> **Cilj:** Minimalna, ciljana izmena sa kompletnom verifikacijom — bez neželjenih posledica.
+> **Cilj:** Minimalna, ciljana izmena sa kompletnom verifikacijom - bez neželjenih posledica.
 
 ---
 
@@ -19,7 +19,7 @@ ZLATNA PRAVILA
 
 1. RAZUMI PRE NEGO ŠTO MENJAŠ
    - Pročitaj relevantan kod i razumi postojeće ponašanje.
-   - Razumi zašto kod radi onako kako radi — možda postoji razlog.
+   - Razumi zašto kod radi onako kako radi - možda postoji razlog.
 
 2. MINIMALNA INTERVENCIJA
    - Ne radi veliki rewrite ako mali patch rešava problem.
@@ -44,7 +44,7 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 - Ne izmišljaj fajlove, rute, API-je, role, testove, dependency-je ili
   rezultate komandi. Ako nešto ne postoji, napiši [NE POSTOJI].
 - Ne tvrdi da je lint/build/test prošao ako komanda nije stvarno pokrenuta.
-  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] — razlog — preporučena
+  Ako komandu ne možeš da pokreneš, napiši: [NOT RUN] - razlog - preporučena
   ručna komanda.
 - Nikada ne ispisuj vrednosti secret-a, tokena, API ključeva ili kredencijala.
   Prikaži samo naziv varijable/fajla i redaktovanu vrednost (npr. sk-****).
@@ -58,40 +58,40 @@ GLOBAL AGENT SAFETY RULES (važe za celu sesiju)
 OBAVEZAN PROCES (koraci se ne preskaču)
 ═══════════════════════════════════════════════════
 
-KORAK 1 — REPRODUKCIJA
+KORAK 1 - REPRODUKCIJA
 ───────────────────────
 - Opiši bag ili problem koji treba rešiti.
 - Navedi korake za reprodukciju (ili objasni zašto se ne može direktno reprodukovati).
 - Navedi expected vs actual ponašanje.
 - Ako je bag prijavljen od strane korisnika, citiraj opis.
 
-KORAK 2 — ROOT CAUSE ANALIZA
+KORAK 2 - ROOT CAUSE ANALIZA
 ─────────────────────────────
 - Identifikuj tačan fajl, funkciju i liniju gde je uzrok problema.
 - Objasni ZAŠTO se bag dešava (ne samo GDE).
 - Proveri da li isti problem postoji na drugim mestima u kodu.
 - Proveri da li ispravljanje ovog baga može da izazove regresiju negde drugde.
 
-KORAK 3 — PREDLOG FIX-A
+KORAK 3 - PREDLOG FIX-A
 ────────────────────────
 - Predloži minimalan fix.
 - Objasni šta se menja i zašto.
 - Eksplicitno navedi šta se NE menja.
 - Ako postoji više mogućih pristupa, navedi opcije sa trade-off-ima.
 
-KORAK 4 — IMPLEMENTACIJA
+KORAK 4 - IMPLEMENTACIJA
 ─────────────────────────
 - Implementiraj fix.
 - Drži se postojećeg coding stila projekta.
 - Nemoj uvođiti nove zavisnosti ako nije apsolutno neophodno.
 
-KORAK 5 — TESTIRANJE
+KORAK 5 - TESTIRANJE
 ─────────────────────
 - Dodaj ili ažuriraj test koji specifično pokriva ovaj bag.
 - Test mora da FAILUJE pre fix-a i PROĐE posle fix-a.
 - Proveri da postojeći testovi i dalje prolaze.
 
-KORAK 6 — VERIFIKACIJA
+KORAK 6 - VERIFIKACIJA
 ───────────────────────
 Pokreni SVE od sledećeg (preskoči samo ako komanda ne postoji u projektu):
 - lint (npm run lint / eslint / ruff...)
@@ -100,7 +100,7 @@ Pokreni SVE od sledećeg (preskoči samo ako komanda ne postoji u projektu):
 - novi/ciljani testovi
 - provera da nema regresije u povezanim korisničkim tokovima
 
-KORAK 7 — FINALNI IZVEŠTAJ
+KORAK 7 - FINALNI IZVEŠTAJ
 ───────────────────────────
 
 Napravi izveštaj sa SVIM sledećim sekcijama:
@@ -159,4 +159,5 @@ Stack: Next.js 16, Auth.js v5, Prisma 7
 Dozvole: Smeš da menjaš kod i da pokrećeš testove.
 Test komande: npm run lint && npm run build && npm run test
 ```
+
 

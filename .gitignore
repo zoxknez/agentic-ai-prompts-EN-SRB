@@ -1,3 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor configurations
+.vscode/
+.idea/
+
+# Log and temporary files
+*.log
+*.tmp
+
+# Dependency and build folders
+node_modules/
+dist/
+build/
+
+# Archives
 *.rar
 *.zip
 *.7z
